@@ -68,12 +68,19 @@ body{
   .hotspot.instagram .chip{animation:chipBlinkBg 6s ease-in-out infinite;animation-delay:3s}
   .hotspot.instagram .chip svg{animation:chipBlinkIcon 6s ease-in-out infinite;animation-delay:3s}
 
-  @keyframes iconGlow{
-    0%,16.6667%,100%{box-shadow:0 0 0 0 #00e85c00}
-    8.3333%{box-shadow:0 0 0 5px #00e85c55,0 0 20px 4px #00e85c99}
+  @keyframes linkBlinkBg{
+    0%,16.6667%,100%{background:#f5f7f8}
+    8.3333%{background:var(--green)}
   }
-  .m-link.tiktok .ico{animation:iconGlow 6s ease-in-out infinite}
-  .m-link.instagram .ico{animation:iconGlow 6s ease-in-out infinite;animation-delay:3s}
+  .m-link.tiktok{animation:linkBlinkBg 6s ease-in-out infinite}
+  .m-link.instagram{animation:linkBlinkBg 6s ease-in-out infinite;animation-delay:3s}
+
+  @keyframes badgePop{
+    0%{opacity:0;transform:scale(.2)}
+    70%{opacity:1;transform:scale(1.15)}
+    100%{opacity:1;transform:scale(1)}
+  }
+  .m-badge{opacity:0;transform:scale(.2);animation:badgePop .6s ease-out 2s forwards}
 }
 
 .mobile-card{display:none}
@@ -112,10 +119,17 @@ body{
   .mobile-card{display:block;width:100%;max-width:640px}
 
   .photo-crop{
-    width:100%;aspect-ratio:560/864;overflow:hidden;
+    position:relative;width:100%;aspect-ratio:560/864;overflow:hidden;
     border-radius:14px 14px 0 0;box-shadow:0 20px 60px #000a;
   }
   .photo-crop img{width:100%;height:100%;object-fit:cover;object-position:left center;display:block}
+
+  .m-badge{
+    position:absolute;top:16px;left:16px;z-index:3;
+    font-weight:800;letter-spacing:1.5px;color:#dce3e8;font-size:14px;
+    text-shadow:0 2px 10px #000a;
+  }
+  .m-badge b{color:var(--green)}
 
   .m-content{padding:22px 4px 4px}
   .m-name{font-size:clamp(28px,8vw,36px);line-height:1.02;margin:0 0 12px;font-weight:800}
@@ -169,6 +183,7 @@ body{
 <div class="mobile-card">
   <div class="photo-crop">
     <img src="presentacion-samuel.png" alt="Samuel Otniel Díaz González">
+    <div class="m-badge">[ <b>MODO</b> ANALISTA ]</div>
   </div>
   <div class="m-content">
     <h1 class="m-name">Samuel Otniel<span>Díaz González</span></h1>

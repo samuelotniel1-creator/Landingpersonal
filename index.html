@@ -53,12 +53,13 @@ body{
 }
 .hotspot:hover .chip svg{color:#001a0a}
 
-.hint{
-  display:none;text-align:center;font-size:12px;letter-spacing:1.5px;
-  color:#7f8b93;margin-top:10px;
-}
+.mobile-card{display:none}
 
-.services{width:100%;max-width:1536px;margin-top:26px;text-align:center}
+.services{width:100%;max-width:1536px;margin-top:26px}
+.services-row{
+  display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap;
+}
+.services-text{text-align:center}
 .services-lead{font-size:16px;color:#d7dde1;margin:0 0 14px;line-height:1.5}
 .services-tags{display:flex;justify-content:center;flex-wrap:wrap;gap:10px 14px;margin-bottom:12px}
 .services-tags span{
@@ -67,36 +68,64 @@ body{
 }
 .services-note{font-size:12px;color:#697780;margin:0}
 
-.wa-cta{
-  display:flex;align-items:center;gap:16px;width:100%;max-width:1536px;margin-top:18px;
-  padding:18px 22px;border-radius:16px;text-decoration:none;
+.wa-btn{
+  display:inline-flex;align-items:center;gap:12px;flex:none;
+  padding:13px 20px;border-radius:14px;text-decoration:none;white-space:nowrap;
   background:var(--green);color:#001a0a;transition:.18s;
 }
-.wa-cta:hover{transform:translateY(-2px);box-shadow:0 14px 34px #00e85c40}
-.wa-cta .ico{
-  width:46px;height:46px;flex:none;border-radius:12px;background:#001a0a;
+.wa-btn:hover{transform:translateY(-2px);box-shadow:0 10px 26px #00e85c40}
+.wa-btn .ico{
+  width:36px;height:36px;flex:none;border-radius:10px;background:#001a0a;
   display:flex;align-items:center;justify-content:center;
 }
-.wa-cta .ico svg{width:24px;height:24px;color:var(--green)}
-.wa-cta .meta{display:flex;flex-direction:column;line-height:1.3}
-.wa-cta .meta b{font-size:17px;font-weight:800}
-.wa-cta .meta small{font-size:13px;font-weight:600;opacity:.75}
-.wa-cta .go{margin-left:auto;font-size:20px;opacity:.6;transition:.18s}
-.wa-cta:hover .go{opacity:1;transform:translateX(3px)}
+.wa-btn .ico svg{width:19px;height:19px;color:var(--green)}
+.wa-btn .meta{display:flex;flex-direction:column;line-height:1.25;text-align:left}
+.wa-btn .meta b{font-size:14px;font-weight:800}
+.wa-btn .meta small{font-size:12px;font-weight:600;opacity:.8}
 
 @media(max-width:820px){
-  body{padding:18px 0}
-  .hero-wrap{overflow-x:auto;padding:0 16px}
-  .hero{width:820px}
-  .hint{display:block}
-  .services{padding:0 16px}
-  .wa-cta{max-width:calc(100% - 32px)}
+  body{padding:18px 16px}
+  .desktop-only{display:none}
+  .mobile-card{display:block;width:100%;max-width:640px}
+
+  .photo-crop{
+    width:100%;aspect-ratio:560/864;overflow:hidden;
+    border-radius:14px 14px 0 0;box-shadow:0 20px 60px #000a;
+  }
+  .photo-crop img{width:100%;height:100%;object-fit:cover;object-position:left center;display:block}
+
+  .m-content{padding:22px 4px 4px}
+  .m-name{font-size:clamp(28px,8vw,36px);line-height:1.02;margin:0 0 12px;font-weight:800}
+  .m-name span{display:block;color:#c7cdd1}
+  .m-line{height:3px;width:70px;background:var(--green);margin:0 0 18px}
+  .m-role{font-size:15px;color:#d7dde1;margin:0 0 22px;line-height:1.4}
+
+  .m-links{display:grid;gap:12px}
+  .m-link{
+    display:flex;align-items:center;gap:14px;padding:13px 16px;border-radius:14px;
+    background:#f5f7f8;color:#050708;text-decoration:none;
+  }
+  .m-link .ico{
+    width:38px;height:38px;flex:none;border-radius:10px;color:#fff;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .m-link.tiktok .ico{background:#010101}
+  .m-link.instagram .ico{background:radial-gradient(circle at 30% 110%,#ffd521 0%,#f50000 30%,#d300c5 60%,#7c00ff 90%)}
+  .m-link .ico svg{width:19px;height:19px}
+  .m-link b{font-size:14px;font-weight:800;display:block}
+  .m-link small{font-size:12px;color:#4a5259;font-weight:600}
+
+  .services{margin-top:22px}
+  .services-row{justify-content:flex-start}
+  .services-text{text-align:left}
+  .services-tags{justify-content:flex-start}
+  .wa-btn{width:100%;justify-content:center}
 }
 </style>
 </head>
 <body>
 
-<div class="hero-wrap">
+<div class="hero-wrap desktop-only">
   <div class="hero">
     <img src="presentacion-samuel.png" alt="Samuel Otniel Díaz González — Coordinador de Data y analista de datos. Modo Analista.">
 
@@ -112,24 +141,47 @@ body{
       </span>
     </a>
   </div>
-  <div class="hint">DESLIZA PARA VER TODO →</div>
+</div>
+
+<div class="mobile-card">
+  <div class="photo-crop">
+    <img src="presentacion-samuel.png" alt="Samuel Otniel Díaz González">
+  </div>
+  <div class="m-content">
+    <h1 class="m-name">Samuel Otniel<span>Díaz González</span></h1>
+    <div class="m-line"></div>
+    <p class="m-role">Coordinador de Data<br>y analista de datos</p>
+    <div class="m-links">
+      <a class="m-link tiktok" href="https://www.tiktok.com/@.modo.analista" target="_blank" rel="noopener">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2h3.1c.2 1.6 1.1 3 2.5 3.9V9c-1.5 0-2.9-.4-4.1-1.2v6.7c0 3.1-2.5 5.5-5.5 5.5S3.5 17.6 3.5 14.5 6 9 9.1 9c.3 0 .6 0 .9.1v3.2c-.3-.1-.6-.2-.9-.2-1.4 0-2.5 1.1-2.5 2.5S7.7 17.1 9.1 17.1s2.5-1.1 2.5-2.5V2z"/></svg></span>
+        <span><b>TikTok</b><small>@.modo.analista</small></span>
+      </a>
+      <a class="m-link instagram" href="https://www.instagram.com/MODOANALISTA_/" target="_blank" rel="noopener">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="6"/><circle cx="12" cy="12" r="4.4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg></span>
+        <span><b>Instagram</b><small>@MODOANALISTA_</small></span>
+      </a>
+    </div>
+  </div>
 </div>
 
 <section class="services">
-  <p class="services-lead">Diseño landings, automatizo tareas y doy mentorías personalizadas.</p>
-  <div class="services-tags">
-    <span>LANDINGS</span><span>AUTOMATIZACIÓN</span><span>MENTORÍAS 1:1</span>
-  </div>
-  <p class="services-note">Servicios profesionales con costo · cotización según proyecto</p>
-</section>
+  <div class="services-row">
+    <div class="services-text">
+      <p class="services-lead">Diseño landings, automatizo tareas y doy mentorías personalizadas.</p>
+      <div class="services-tags">
+        <span>LANDINGS</span><span>AUTOMATIZACIÓN</span><span>MENTORÍAS 1:1</span>
+      </div>
+      <p class="services-note">Servicios profesionales con costo · cotización según proyecto</p>
+    </div>
 
-<a class="wa-cta" href="https://wa.me/5213329467402?text=Hola%20Samuel%2C%20vi%20tu%20landing%20y%20quiero%20informaci%C3%B3n%20sobre%20tus%20servicios" target="_blank" rel="noopener">
-  <span class="ico">
-    <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="7" fill="none" stroke="currentColor" stroke-width="2"/><polygon points="8,18 8,22 12,18" fill="currentColor"/></svg>
-  </span>
-  <span class="meta"><b>Escríbeme por WhatsApp</b><small>+52 1 33 2946 7402</small></span>
-  <span class="go">→</span>
-</a>
+    <a class="wa-btn" href="https://wa.me/5213329467402?text=Hola%20Samuel%2C%20vi%20tu%20landing%20y%20quiero%20informaci%C3%B3n%20sobre%20tus%20servicios" target="_blank" rel="noopener">
+      <span class="ico">
+        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="7" fill="none" stroke="currentColor" stroke-width="2"/><polygon points="8,18 8,22 12,18" fill="currentColor"/></svg>
+      </span>
+      <span class="meta"><b>WhatsApp</b><small>+52 1 33 2946 7402</small></span>
+    </a>
+  </div>
+</section>
 
 </body>
 </html>

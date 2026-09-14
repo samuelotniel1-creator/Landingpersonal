@@ -84,7 +84,14 @@ body{
 }
 
 .mobile-card{display:none}
-.scroll-hint{display:none}
+
+.scroll-hint{
+  display:flex;position:fixed;left:50%;bottom:16px;z-index:50;
+  width:34px;height:34px;border-radius:50%;align-items:center;justify-content:center;
+  background:#0a141cd9;border:1px solid #1b2933;color:var(--green);
+  opacity:.6;pointer-events:none;transition:opacity .4s ease;
+}
+.scroll-hint.hide{opacity:0}
 
 .services{width:100%;max-width:1536px;margin-top:12px}
 .services-row{
@@ -158,14 +165,6 @@ body{
   .services-text{text-align:left}
   .services-tags{justify-content:flex-start}
   .wa-btn{width:100%;justify-content:center}
-
-  .scroll-hint{
-    display:flex;position:fixed;left:50%;bottom:14px;z-index:50;
-    width:34px;height:34px;border-radius:50%;align-items:center;justify-content:center;
-    background:#0a141cd9;border:1px solid #1b2933;color:var(--green);
-    opacity:.6;pointer-events:none;transition:opacity .4s ease;
-  }
-  .scroll-hint.hide{opacity:0}
 }
 
 @media(prefers-reduced-motion:no-preference){

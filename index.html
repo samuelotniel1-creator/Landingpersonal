@@ -56,17 +56,24 @@ body{
 
 @media(prefers-reduced-motion:no-preference){
   @keyframes chipBlinkBg{
-    0%,25%,100%{background:#050b10;border-color:#1b2933;box-shadow:0 0 0 0 #00e85c00}
-    12.5%{background:var(--green);border-color:var(--green);box-shadow:0 0 26px #00e85c99}
+    0%,16.6667%,100%{background:#050b10;border-color:#1b2933;box-shadow:0 0 0 0 #00e85c00}
+    8.3333%{background:var(--green);border-color:var(--green);box-shadow:0 0 26px #00e85c99}
   }
   @keyframes chipBlinkIcon{
-    0%,25%,100%{color:var(--green)}
-    12.5%{color:#001a0a}
+    0%,16.6667%,100%{color:var(--green)}
+    8.3333%{color:#001a0a}
   }
-  .hotspot.tiktok .chip{animation:chipBlinkBg 4s ease-in-out infinite}
-  .hotspot.tiktok .chip svg{animation:chipBlinkIcon 4s ease-in-out infinite}
-  .hotspot.instagram .chip{animation:chipBlinkBg 4s ease-in-out infinite;animation-delay:2s}
-  .hotspot.instagram .chip svg{animation:chipBlinkIcon 4s ease-in-out infinite;animation-delay:2s}
+  .hotspot.tiktok .chip{animation:chipBlinkBg 6s ease-in-out infinite}
+  .hotspot.tiktok .chip svg{animation:chipBlinkIcon 6s ease-in-out infinite}
+  .hotspot.instagram .chip{animation:chipBlinkBg 6s ease-in-out infinite;animation-delay:3s}
+  .hotspot.instagram .chip svg{animation:chipBlinkIcon 6s ease-in-out infinite;animation-delay:3s}
+
+  @keyframes iconGlow{
+    0%,16.6667%,100%{box-shadow:0 0 0 0 #00e85c00}
+    8.3333%{box-shadow:0 0 0 5px #00e85c55,0 0 20px 4px #00e85c99}
+  }
+  .m-link.tiktok .ico{animation:iconGlow 6s ease-in-out infinite}
+  .m-link.instagram .ico{animation:iconGlow 6s ease-in-out infinite;animation-delay:3s}
 }
 
 .mobile-card{display:none}

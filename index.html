@@ -298,7 +298,10 @@ body{
   border-radius:50%;background:var(--accent);box-shadow:0 0 10px rgba(var(--accent-rgb),.7);
 }
 
-.portfolio-card{background:var(--surface);border:1px dashed #33424c;border-radius:18px;padding:26px;text-align:left}
+.portfolio-card{
+  background:var(--surface);border:1px dashed #33424c;border-radius:18px;padding:26px;text-align:left;
+  scroll-snap-align:start;flex:0 0 auto;width:min(320px,80vw);
+}
 .pending-tag{
   display:inline-block;font-size:10px;letter-spacing:1.2px;font-weight:800;color:#04140f;
   background:var(--accent);padding:5px 11px;border-radius:999px;margin-bottom:16px;
@@ -306,6 +309,41 @@ body{
 .portfolio-card dl{margin:0;display:grid;gap:9px}
 .portfolio-card dt{font-size:10.5px;letter-spacing:1.2px;color:#7f8b93;font-weight:700;text-transform:uppercase}
 .portfolio-card dd{margin:0 0 7px;font-size:13.5px;color:#c3ccd2}
+
+.portfolio-thumb{
+  width:100%;height:120px;border-radius:12px;margin-bottom:18px;
+  border:1px dashed #33424c;background:rgba(var(--accent-rgb),.04);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;color:#4a5560;
+  overflow:hidden;
+}
+.portfolio-thumb svg{width:26px;height:26px}
+.portfolio-thumb span{font-size:10px;letter-spacing:.5px;color:#5c6870}
+.portfolio-thumb.has-img{border-style:solid;border-color:var(--border);background:#000}
+.portfolio-thumb.has-img img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
+.portfolio-card h3{font-size:15px;margin:0 0 14px;font-weight:700}
+
+.carousel{position:relative;display:flex;align-items:center;gap:14px;margin-top:12px}
+.carousel-track{
+  display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;
+  padding:4px 4px 10px;scrollbar-width:none;flex:1;
+}
+.carousel-track::-webkit-scrollbar{display:none}
+.carousel-nav{
+  flex:none;width:42px;height:42px;border-radius:50%;cursor:pointer;
+  background:var(--surface);border:1px solid var(--border);color:var(--accent);
+  font-size:18px;line-height:1;display:flex;align-items:center;justify-content:center;
+  transition:.2s;
+}
+.carousel-nav:hover:not(:disabled){border-color:rgba(var(--accent-rgb),.5);background:rgba(var(--accent-rgb),.08)}
+.carousel-nav:disabled{opacity:.3;cursor:default}
+.carousel-dots{display:flex;gap:8px;justify-content:center;margin-top:18px}
+.carousel-dots .dot{
+  width:7px;height:7px;border-radius:50%;background:var(--border);border:none;padding:0;
+  cursor:pointer;transition:.2s;
+}
+.carousel-dots .dot.active{background:var(--accent);width:22px;border-radius:4px}
+
+@media(max-width:640px){.carousel-nav{display:none}}
 
 .about{display:flex;align-items:center;gap:48px;text-align:left;flex-wrap:wrap}
 .about-photo{
@@ -555,26 +593,71 @@ body{
 <section class="section" id="portafolio">
   <p class="eyebrow">PORTAFOLIO</p>
   <h2 class="h2">Proyectos</h2>
-  <p class="lead">Esta sección está en construcción. Aquí iré agregando casos reales con su problema, solución, tecnologías usadas y resultado.</p>
-  <div class="grid">
-    <article class="portfolio-card">
-      <span class="pending-tag">Próximamente</span>
-      <dl>
-        <dt>Problema</dt><dd>Pendiente</dd>
-        <dt>Solución</dt><dd>Pendiente</dd>
-        <dt>Tecnologías</dt><dd>Pendiente</dd>
-        <dt>Resultado</dt><dd>Pendiente</dd>
-      </dl>
-    </article>
-    <article class="portfolio-card">
-      <span class="pending-tag">Próximamente</span>
-      <dl>
-        <dt>Problema</dt><dd>Pendiente</dd>
-        <dt>Solución</dt><dd>Pendiente</dd>
-        <dt>Tecnologías</dt><dd>Pendiente</dd>
-        <dt>Resultado</dt><dd>Pendiente</dd>
-      </dl>
-    </article>
+  <p class="lead">Algunos de los proyectos en los que he trabajado. Los detalles de cada caso (problema, solución y resultado) los iré completando pronto.</p>
+
+  <div class="carousel">
+    <button class="carousel-nav prev" type="button" aria-label="Proyecto anterior">‹</button>
+    <div class="carousel-track" id="portfolioTrack" tabindex="0" aria-label="Lista de proyectos, desliza para ver más">
+      <article class="portfolio-card">
+        <div class="portfolio-thumb has-img">
+          <img src="CRM.png" alt="Dashboard de CRM para Club Sinergético" loading="lazy">
+        </div>
+        <span class="pending-tag">DASHBOARD</span>
+        <h3>CRM · Club Sinergético</h3>
+        <dl>
+          <dt>Problema</dt><dd>Pendiente</dd>
+          <dt>Solución</dt><dd>Pendiente</dd>
+          <dt>Tecnologías</dt><dd>Dashboard interno</dd>
+          <dt>Resultado</dt><dd>Pendiente</dd>
+        </dl>
+      </article>
+      <article class="portfolio-card">
+        <div class="portfolio-thumb has-img">
+          <img src="portfolio-glow21.png" alt="Landing page de Glow21, masterclass en vivo de cuidado de la piel" loading="lazy">
+        </div>
+        <span class="pending-tag">LANDING PAGE</span>
+        <h3>Glow21</h3>
+        <dl>
+          <dt>Problema</dt><dd>Pendiente</dd>
+          <dt>Solución</dt><dd>Pendiente</dd>
+          <dt>Tecnologías</dt><dd>Landing page · Vercel</dd>
+          <dt>Resultado</dt><dd>Pendiente</dd>
+        </dl>
+      </article>
+      <article class="portfolio-card">
+        <div class="portfolio-thumb has-img">
+          <img src="portfolio-tricom.png" alt="Landing page de Tricom FS, consultoría de medicina cannábica" loading="lazy">
+        </div>
+        <span class="pending-tag">LANDING PAGE</span>
+        <h3>Tricom FS</h3>
+        <dl>
+          <dt>Problema</dt><dd>Pendiente</dd>
+          <dt>Solución</dt><dd>Pendiente</dd>
+          <dt>Tecnologías</dt><dd>Landing page · Vercel</dd>
+          <dt>Resultado</dt><dd>Pendiente</dd>
+        </dl>
+      </article>
+      <article class="portfolio-card">
+        <div class="portfolio-thumb has-img">
+          <img src="portfolio-preregistro.png" alt="Landing page de preregistro para una masterclass de cuidado de la piel" loading="lazy">
+        </div>
+        <span class="pending-tag">LANDING PAGE</span>
+        <h3>Preregistro · Masterclass de piel</h3>
+        <dl>
+          <dt>Problema</dt><dd>Pendiente</dd>
+          <dt>Solución</dt><dd>Pendiente</dd>
+          <dt>Tecnologías</dt><dd>Landing page</dd>
+          <dt>Resultado</dt><dd>Pendiente</dd>
+        </dl>
+      </article>
+    </div>
+    <button class="carousel-nav next" type="button" aria-label="Siguiente proyecto">›</button>
+  </div>
+  <div class="carousel-dots" role="tablist" aria-label="Ir a proyecto">
+    <button class="dot active" type="button" aria-label="Proyecto 1"></button>
+    <button class="dot" type="button" aria-label="Proyecto 2"></button>
+    <button class="dot" type="button" aria-label="Proyecto 3"></button>
+    <button class="dot" type="button" aria-label="Proyecto 4"></button>
   </div>
 </section>
 
@@ -672,6 +755,32 @@ body{
     hint.classList.add('hide');
     window.removeEventListener('scroll', once);
   }, {passive:true, once:true});
+})();
+
+(function(){
+  var track = document.getElementById('portfolioTrack');
+  if(!track) return;
+  var cards = track.querySelectorAll('.portfolio-card');
+  var dots = document.querySelectorAll('.carousel-dots .dot');
+  var prevBtn = document.querySelector('.carousel-nav.prev');
+  var nextBtn = document.querySelector('.carousel-nav.next');
+
+  function step(){ return cards[0] ? cards[0].getBoundingClientRect().width + 18 : 0; }
+
+  function update(){
+    var idx = Math.round(track.scrollLeft / step());
+    dots.forEach(function(d,i){ d.classList.toggle('active', i === idx); });
+    if(prevBtn) prevBtn.disabled = track.scrollLeft <= 4;
+    if(nextBtn) nextBtn.disabled = track.scrollLeft >= track.scrollWidth - track.clientWidth - 4;
+  }
+
+  if(prevBtn) prevBtn.addEventListener('click', function(){ track.scrollBy({left:-step(), behavior:'smooth'}); });
+  if(nextBtn) nextBtn.addEventListener('click', function(){ track.scrollBy({left:step(), behavior:'smooth'}); });
+  dots.forEach(function(d,i){ d.addEventListener('click', function(){ track.scrollTo({left:i*step(), behavior:'smooth'}); }); });
+
+  track.addEventListener('scroll', function(){ window.requestAnimationFrame(update); }, {passive:true});
+  window.addEventListener('resize', update);
+  update();
 })();
 </script>
 

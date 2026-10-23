@@ -224,15 +224,18 @@ body{
 .ed-hero-sub{font-size:15.5px;color:var(--ed-muted);line-height:1.75;max-width:420px;margin:0 0 32px}
 .ed-hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
 
-.ed-hero-portrait{flex:none;width:300px;max-width:42%;position:relative}
-.ed-hero-portrait .frame{
-  aspect-ratio:3/4;border-radius:4px;overflow:hidden;position:relative;
-  -webkit-mask-image:linear-gradient(to bottom,#000 78%,transparent 100%);
-  mask-image:linear-gradient(to bottom,#000 78%,transparent 100%);
+.ed-hero-portrait{
+  flex:none;width:340px;max-width:44%;position:relative;align-self:flex-end;
+}
+.ed-hero-portrait::before{
+  content:"";position:absolute;inset:0;z-index:0;
+  background:radial-gradient(circle at 50% 35%,rgba(var(--accent-rgb),.16),transparent 70%);
 }
 .ed-hero-portrait img{
-  width:100%;height:100%;object-fit:cover;object-position:top center;display:block;
-  filter:grayscale(1) contrast(1.08) brightness(.96);
+  position:relative;z-index:1;width:100%;display:block;
+  filter:grayscale(1) contrast(1.1) brightness(.98);
+  -webkit-mask-image:linear-gradient(to bottom,#000 80%,transparent 99%);
+  mask-image:linear-gradient(to bottom,#000 80%,transparent 99%);
 }
 
 /* Generic editorial section */
@@ -340,9 +343,14 @@ a.ed-project:hover .ed-project-arrow{border-color:var(--accent);color:var(--acce
   .ed-nav-links{display:none}
   .ed-hero{flex-direction:column-reverse;gap:32px;padding:40px 0;text-align:center}
   .ed-hero-text{text-align:center}
-  .ed-hero-sub{margin-left:auto;margin-right:auto}
+  .ed-hero-text{max-width:100%}
+  .ed-hero-sub{margin-left:auto;margin-right:auto;max-width:100%}
   .ed-hero-ctas{justify-content:center}
-  .ed-hero-portrait{width:220px;max-width:70%}
+  .ed-hero-portrait{width:220px;max-width:70%;align-self:center}
+  .ed-hero-title{
+    font-size:clamp(22px,7vw,27px);letter-spacing:-.01em;
+    overflow-wrap:break-word;
+  }
   .ed-section{padding:52px 0}
   .ed-problems{grid-template-columns:1fr}
   .ed-project{grid-template-columns:1fr;gap:16px;text-align:left}
@@ -420,7 +428,7 @@ a.ed-project:hover .ed-project-arrow{border-color:var(--accent);color:var(--acce
     </div>
   </div>
   <div class="ed-hero-portrait reveal">
-    <div class="frame"><img src="hero-portrait.png" alt="Samuel Otniel Díaz González" loading="lazy"></div>
+    <img src="samuel-cutout.png" alt="Samuel Otniel Díaz González" loading="lazy">
   </div>
 </section>
 

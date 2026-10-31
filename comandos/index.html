@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Syncopate:wght@400;700&display=swap">
+<title>Comandos para ChatGPT | Modo Analista</title>
+<meta name="description" content="Biblioteca de comandos / para ChatGPT: resume, explica, redacta, traduce, analiza y edita imágenes con prompts listos para copiar.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Comandos para ChatGPT | Modo Analista">
+<meta property="og:description" content="Prompts listos para copiar: resumir, redactar, traducir, analizar y editar imágenes con IA.">
+<meta property="og:image" content="https://modo-analista.vercel.app/MODO.png">
+<style>
+:root{
+  --bg:#1c1c1c;--green:#00e85c;--text:#f5f7f8;--muted:#aab3ba;
+  --surface:#0a141c;--surface-2:#0d1a24;--border:#1c2a35;
+  --display:'Syncopate',Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{margin:0;min-height:100%}
+body{
+  background:var(--bg);color:var(--text);font-family:'Inter',Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  padding:16px;
+}
+.wrap{width:100%;max-width:1100px;margin:0 auto}
+a{color:inherit}
+
+/* Header */
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:6px 4px 18px}
+.brand{font-weight:800;letter-spacing:1.5px;font-size:14px;text-decoration:none;color:#dce3e8}
+.brand b{color:var(--green)}
+.top nav{display:flex;gap:10px}
+.pill{
+  font-size:13px;font-weight:600;text-decoration:none;color:var(--text);
+  border:1px solid var(--border);background:var(--surface);padding:8px 14px;border-radius:999px;transition:.18s;
+}
+.pill:hover{border-color:var(--green);color:var(--green)}
+
+/* Hero */
+.hero{
+  display:grid;grid-template-columns:1.3fr .7fr;gap:24px;align-items:center;
+  background:var(--surface);border:1px solid var(--border);border-radius:18px;
+  padding:clamp(22px,4vw,44px);box-shadow:0 30px 90px #000a;overflow:hidden;
+}
+.eyebrow{font-family:var(--display);font-size:11px;letter-spacing:3px;color:var(--green);margin:0 0 14px}
+h1{font-size:clamp(28px,5vw,52px);line-height:1.02;margin:0 0 14px;font-weight:900}
+h1 span{color:var(--green)}
+.lead{color:#d7dde1;font-size:clamp(15px,2vw,18px);line-height:1.5;margin:0 0 20px;max-width:560px}
+.line{height:3px;width:70px;background:var(--green);margin:0 0 18px}
+.mascot{background:#fff;border-radius:16px;padding:8px;justify-self:center;max-width:300px;width:100%}
+.mascot img{width:100%;display:block;border-radius:12px}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;background:var(--green);color:#001a0a;font-weight:800;
+  padding:12px 20px;border-radius:12px;text-decoration:none;font-size:15px;transition:.18s;border:0;cursor:pointer;font-family:inherit;
+}
+.btn:hover{box-shadow:0 0 24px #00e85c66;transform:translateY(-1px)}
+
+/* Notice */
+.notice{
+  margin:18px 0 0;padding:14px 18px;border-radius:14px;border:1px dashed #2f4a3d;background:#0b1812;
+  color:#cfe9da;font-size:14px;line-height:1.5;
+}
+.notice b{color:var(--green)}
+
+/* Steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:26px 0}
+.step{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px}
+.step .n{font-family:var(--display);font-size:34px;color:var(--green);line-height:1;margin-bottom:10px}
+.step h3{margin:0 0 6px;font-size:17px}
+.step p{margin:0;color:var(--muted);font-size:14px;line-height:1.45}
+.step code{background:#13232e;padding:1px 6px;border-radius:6px;color:var(--green);font-size:13px}
+
+/* Toolbar */
+h2{font-size:clamp(22px,3.4vw,32px);margin:34px 0 14px;font-weight:800}
+.toolbar{position:sticky;top:0;z-index:20;background:linear-gradient(var(--bg) 80%,#1c1c1c00);padding:10px 0 14px}
+.search{
+  width:100%;background:var(--surface);border:1px solid var(--border);color:var(--text);
+  border-radius:12px;padding:13px 16px;font-size:15px;font-family:inherit;outline:none;
+}
+.search:focus{border-color:var(--green)}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:12px 0 2px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{
+  flex:none;border:1px solid var(--border);background:var(--surface);color:var(--muted);
+  padding:8px 14px;border-radius:999px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;transition:.18s;
+}
+.chip:hover{color:var(--text);border-color:#35505f}
+.chip.on{background:var(--green);color:#001a0a;border-color:var(--green)}
+
+/* Cards */
+.cat{margin:26px 0 12px;display:flex;align-items:baseline;gap:12px}
+.cat h3{margin:0;font-size:20px}
+.cat span{color:var(--muted);font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.card{
+  background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px;
+  display:flex;flex-direction:column;gap:12px;transition:.18s;
+}
+.card:hover{border-color:#2b4a3a}
+.card header{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.cmd{font-family:ui-monospace,Consolas,monospace;font-weight:700;color:var(--green);background:#06170e;border:1px solid #14432a;padding:5px 12px;border-radius:8px;font-size:15px}
+.name{font-weight:700;font-size:15px;color:#dce3e8}
+.goal{margin:0;color:var(--muted);font-size:14px;line-height:1.45}
+.prompt{
+  margin:0;background:#06101a;border:1px solid var(--border);border-radius:12px;padding:14px;
+  font-size:13.5px;line-height:1.55;color:#d7dde1;flex:1;
+}
+.prompt mark{background:#00e85c1f;color:var(--green);border-radius:4px;padding:0 3px}
+.actions{display:flex;gap:10px;align-items:center}
+.copy{
+  flex:1;background:var(--green);color:#001a0a;border:0;border-radius:10px;padding:11px 14px;
+  font-weight:800;font-size:14px;cursor:pointer;font-family:inherit;transition:.18s;
+}
+.copy:hover{box-shadow:0 0 20px #00e85c55}
+.copy.done{background:#f5f7f8}
+.empty{display:none;text-align:center;color:var(--muted);padding:40px 0}
+
+/* Template */
+.tpl{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px;margin-top:10px}
+.tpl p{color:var(--muted);font-size:14px;margin:0 0 12px;line-height:1.5}
+.tpl pre{margin:0 0 14px;background:#06101a;border:1px solid var(--border);border-radius:12px;padding:14px;overflow-x:auto;font-size:13px;line-height:1.55;color:#d7dde1}
+
+/* Tips */
+.tips{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+.tips li{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 16px;font-size:14px;line-height:1.5;color:#d7dde1}
+.tips li::before{content:"✓";color:var(--green);font-weight:800;margin-right:10px}
+
+footer{text-align:center;color:var(--muted);font-size:13px;padding:36px 0 16px}
+footer b{color:var(--green)}
+
+.toast{
+  position:fixed;left:50%;bottom:22px;transform:translate(-50%,20px);opacity:0;pointer-events:none;
+  background:#f5f7f8;color:#050708;font-weight:700;font-size:14px;padding:11px 18px;border-radius:12px;
+  transition:.25s;z-index:60;box-shadow:0 10px 40px #000a;
+}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+@media(max-width:820px){
+  .hero{grid-template-columns:1fr}
+  .mascot{max-width:220px;order:-1}
+  .steps,.grid{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="top">
+    <a class="brand" href="/">MODO <b>ANALISTA</b></a>
+    <nav><a class="pill" href="#comandos">Comandos ↓</a></nav>
+  </div>
+
+  <section class="hero">
+    <div>
+      <p class="eyebrow">BIBLIOTECA · CHATGPT</p>
+      <h1>Comandos <span>/</span> para ChatGPT</h1>
+      <div class="line"></div>
+      <p class="lead">Atajos de prompts listos para copiar: resume, redacta, traduce, analiza y edita imágenes con una sola instrucción.</p>
+      <a class="btn" href="#comandos">Ver comandos ↓</a>
+    </div>
+    <div class="mascot"><img src="/MODO.png" alt="Modo, la mascota de Modo Analista, con el pulgar arriba"></div>
+  </section>
+
+  <p class="notice"><b>Importante:</b> estos comandos <b>no son funciones nativas de ChatGPT</b>. Son etiquetas fáciles de recordar. Copia el prompt, o define antes en tus instrucciones personalizadas qué debe hacer cada comando.</p>
+
+  <section class="steps" aria-label="Cómo usar">
+    <div class="step"><div class="n">1</div><h3>Elige un comando</h3><p>Filtra por categoría o busca con <code>/summarize</code>, <code>/translate</code>…</p></div>
+    <div class="step"><div class="n">2</div><h3>Copia el prompt</h3><p>Toca «Copiar prompt» y pégalo en ChatGPT.</p></div>
+    <div class="step"><div class="n">3</div><h3>Sustituye los [CORCHETES]</h3><p>Reemplaza cada campo resaltado por tu texto, tema o imagen.</p></div>
+  </section>
+
+  <h2 id="comandos">Prompts listos para usar</h2>
+  <div class="toolbar">
+    <input class="search" id="q" type="search" placeholder="Buscar comando… (ej. traducir, fondo, resumir)" aria-label="Buscar comando">
+    <div class="chips" id="chips"></div>
+  </div>
+
+  <div id="list"></div>
+  <p class="empty" id="empty">No encontré comandos con esa búsqueda.</p>
+
+  <h2>Crea tus propios comandos</h2>
+  <div class="tpl">
+    <p>Usa esta plantilla para añadir nuevos atajos a tu biblioteca.</p>
+    <pre id="tpl">### `/nombre-del-comando` — Nombre descriptivo
+**Categoría:** [CATEGORÍA]
+**Objetivo:** [QUÉ RESUELVE]
+**Entrada necesaria:** [TEXTO / IMAGEN / DATOS]
+**Prompt listo para usar:**
+&gt; [INSTRUCCIÓN CLARA CON VARIABLES ENTRE CORCHETES]</pre>
+    <button class="btn" data-copy-tpl>Copiar plantilla</button>
+  </div>
+
+  <h2>Consejos</h2>
+  <ul class="tips">
+    <li>Sustituye los campos entre corchetes (<b>[TEXTO]</b>, <b>[TEMA]</b>…) por tu información.</li>
+    <li>Agrega contexto sobre público, objetivo, tono y formato de salida.</li>
+    <li>Revisa los resultados antes de publicarlos o usarlos en decisiones importantes.</li>
+    <li>Para usar solo <b>/comando</b> como activador, configura su significado en un GPT personalizado o en las instrucciones del asistente.</li>
+  </ul>
+
+  <footer><b>Modo Analista</b> · Aprende, aplica y crea con inteligencia artificial.</footer>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite">¡Prompt copiado!</div>
+
+<script>
+const IMG_NOTE = "Adjunta la imagen original. Indica qué debe permanecer intacto; el resultado puede requerir revisión.";
+const DATA = [
+  {cat:"Resumen y comprensión", items:[
+    {cmd:"/summarize", name:"Resumir", goal:"Reducir textos extensos a sus puntos esenciales.", p:"Resume el siguiente contenido en cinco ideas clave. Conserva los datos importantes y evita inventar información: [PEGA EL TEXTO]."},
+    {cmd:"/explain", name:"Explicar", goal:"Aclarar conceptos con lenguaje sencillo.", p:"Explica [TEMA] de forma clara y sencilla, sin tecnicismos innecesarios. Incluye un ejemplo práctico."},
+    {cmd:"/eli5", name:"Explicar como a alguien de 5 años", goal:"Entender temas complejos mediante analogías simples.", p:"Explícame [TEMA] como si tuviera cinco años. Usa palabras cotidianas y una analogía fácil de entender."},
+    {cmd:"/expand", name:"Ampliar", goal:"Desarrollar una idea con más contexto y detalle.", p:"Amplía la siguiente idea con explicaciones y ejemplos útiles, sin cambiar su significado: [IDEA]."},
+    {cmd:"/shorten", name:"Acortar", goal:"Hacer un mensaje más breve sin perder lo esencial.", p:"Acorta este texto al máximo manteniendo el mensaje central y un tono natural: [TEXTO]."}
+  ]},
+  {cat:"Redacción y edición", items:[
+    {cmd:"/rewrite", name:"Reescribir", goal:"Cambiar el estilo o tono de un texto.", p:"Reescribe este texto con un tono [PROFESIONAL / CERCANO / PERSUASIVO], conservando su intención y los hechos: [TEXTO]."},
+    {cmd:"/improve", name:"Mejorar", goal:"Pulir claridad, estructura e impacto.", p:"Mejora la claridad, fluidez y estructura del siguiente texto. Conserva el mensaje y no agregues datos no proporcionados: [TEXTO]."},
+    {cmd:"/proofread", name:"Corregir", goal:"Revisar ortografía, gramática y puntuación.", p:"Corrige ortografía, gramática y puntuación de este texto sin alterar su significado ni su estilo: [TEXTO]."},
+    {cmd:"/custom", name:"Personalizar", goal:"Adaptar contenido a una necesidad específica.", p:"Adapta este contenido para [PÚBLICO / PLATAFORMA / OBJETIVO]. Respeta estas condiciones: [REGLAS]. Contenido: [TEXTO]."}
+  ]},
+  {cat:"Idiomas", items:[
+    {cmd:"/translate", name:"Traducir", goal:"Traducir respetando el significado y tono original.", p:"Traduce el siguiente texto al [IDIOMA]. Mantén el tono, el contexto y los nombres propios: [TEXTO]."}
+  ]},
+  {cat:"Creatividad", items:[
+    {cmd:"/brainstorm", name:"Lluvia de ideas", goal:"Generar alternativas creativas.", p:"Genera diez ideas originales para [OBJETIVO], dirigidas a [PÚBLICO]. Ordénalas por facilidad de implementación y evita propuestas repetitivas."}
+  ]},
+  {cat:"Análisis", items:[
+    {cmd:"/analyze", name:"Analizar", goal:"Examinar datos, documentos o situaciones para encontrar hallazgos.", p:"Analiza [DATOS / DOCUMENTO / SITUACIÓN]. Identifica patrones, hallazgos, riesgos y tres acciones recomendadas. Distingue hechos de suposiciones."}
+  ]},
+  {cat:"Imágenes", note:IMG_NOTE, items:[
+    {cmd:"/remove-background", name:"Eliminar fondo", goal:"Aislar un sujeto sobre fondo transparente.", p:"Quita el fondo de esta imagen y entrégala con transparencia. Mantén el sujeto completamente intacto, con bordes limpios y naturales. No cambies sus rasgos, colores ni proporciones."},
+    {cmd:"/upscale", name:"Mejorar resolución", goal:"Aumentar nitidez y calidad aparente.", p:"Mejora la resolución y nitidez de esta imagen. Conserva la composición, los colores, los detalles y los rasgos originales. Evita inventar elementos o alterar la identidad de las personas."},
+    {cmd:"/relight", name:"Cambiar iluminación", goal:"Mejorar o transformar la luz de una fotografía.", p:"Cambia la iluminación de esta fotografía por una luz de estudio profesional, natural y favorecedora. No modifiques el rostro, la expresión, la pose ni los rasgos faciales."},
+    {cmd:"/change-outfit", name:"Cambiar vestimenta", goal:"Sustituir ropa manteniendo a la persona reconocible.", p:"Cambia la vestimenta de la persona por [DESCRIPCIÓN DEL OUTFIT]. Conserva exactamente su rostro, sus rasgos faciales, su pose y sus proporciones. Mantén un resultado fotorealista."},
+    {cmd:"/change-background", name:"Cambiar escenario", goal:"Reemplazar el entorno de una imagen.", p:"Reemplaza el fondo de esta imagen por [DESCRIPCIÓN DEL ESCENARIO]. Mantén intacto el sujeto principal y ajusta sombras e iluminación para que el resultado sea coherente y realista."}
+  ]}
+];
+
+const $ = s => document.querySelector(s);
+const esc = s => s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const hl = s => esc(s).replace(/\[([^\]]+)\]/g, '<mark>[$1]</mark>');
+
+let active = "Todos";
+const list = $("#list"), chips = $("#chips");
+
+["Todos", ...DATA.map(d => d.cat)].forEach(c => {
+  const b = document.createElement("button");
+  b.className = "chip" + (c === active ? " on" : "");
+  b.textContent = c;
+  b.onclick = () => { active = c; [...chips.children].forEach(x => x.classList.toggle("on", x === b)); render(); };
+  chips.appendChild(b);
+});
+
+function render(){
+  const q = $("#q").value.trim().toLowerCase();
+  let html = "", total = 0;
+  DATA.forEach(g => {
+    if (active !== "Todos" && g.cat !== active) return;
+    const items = g.items.filter(i => !q || (i.cmd + " " + i.name + " " + i.goal + " " + i.p).toLowerCase().includes(q));
+    if (!items.length) return;
+    total += items.length;
+    html += `<div class="cat"><h3>${esc(g.cat)}</h3><span>${items.length} ${items.length === 1 ? "comando" : "comandos"}${g.note ? " · " + esc(g.note) : ""}</span></div><div class="grid">`;
+    items.forEach(i => {
+      html += `<article class="card"><header><span class="cmd">${esc(i.cmd)}</span><span class="name">${esc(i.name)}</span></header>
+        <p class="goal">${esc(i.goal)}</p><p class="prompt">${hl(i.p)}</p>
+        <div class="actions"><button class="copy" data-p="${esc(i.p)}">Copiar prompt</button></div></article>`;
+    });
+    html += `</div>`;
+  });
+  list.innerHTML = html;
+  $("#empty").style.display = total ? "none" : "block";
+}
+
+const toast = $("#toast");
+let tt;
+function copy(text, btn, msg){
+  const done = () => {
+    toast.textContent = msg; toast.classList.add("show");
+    clearTimeout(tt); tt = setTimeout(() => toast.classList.remove("show"), 1800);
+    if (btn){ const o = btn.textContent; btn.textContent = "¡Copiado!"; btn.classList.add("done");
+      setTimeout(() => { btn.textContent = o; btn.classList.remove("done"); }, 1600); }
+  };
+  if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(text).then(done, fallback);
+  else fallback();
+  function fallback(){
+    const t = document.createElement("textarea"); t.value = text; t.style.position = "fixed"; t.style.opacity = "0";
+    document.body.appendChild(t); t.select();
+    try { document.execCommand("copy"); done(); } catch(e) {}
+    t.remove();
+  }
+}
+
+list.addEventListener("click", e => {
+  const b = e.target.closest(".copy");
+  if (b) copy(b.dataset.p, b, "¡Prompt copiado!");
+});
+document.querySelector("[data-copy-tpl]").onclick = e =>
+  copy($("#tpl").textContent, e.currentTarget, "¡Plantilla copiada!");
+$("#q").addEventListener("input", render);
+render();
+</script>
+</body>
+</html>

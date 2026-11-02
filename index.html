@@ -208,6 +208,8 @@ body{
   letter-spacing:.1em;text-transform:uppercase;transition:.2s;
 }
 .ed-nav-links a:hover{color:var(--accent)}
+.ed-nav-links a.nav-tools{color:var(--accent);border:1px solid var(--accent);padding:8px 14px;border-radius:3px}
+.ed-nav-links a.nav-tools:hover{background:var(--accent);color:#04140f}
 
 /* Hero — split layout */
 .ed-hero{
@@ -280,6 +282,7 @@ a.ed-project:hover .ed-project-thumb img{transform:scale(1.04)}
 }
 a.ed-project:hover .ed-project-arrow{border-color:var(--accent);color:var(--accent);transform:translateX(4px)}
 .ed-project-arrow svg{width:16px;height:16px}
+.ed-tool-cta{display:inline-block;margin-top:16px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);border-bottom:1px solid var(--accent);padding-bottom:3px}
 .ed-project.is-plain{cursor:default}
 .ed-project.is-plain .ed-project-arrow{opacity:.35}
 
@@ -415,6 +418,7 @@ a.ed-project:hover .ed-project-arrow{border-color:var(--accent);color:var(--acce
     <li><a href="#portafolio">Proyectos</a></li>
     <li><a href="#sobre-mi">Sobre mí</a></li>
     <li><a href="#mentorias">Mentorías</a></li>
+    <li><a class="nav-tools" href="#herramientas">Herramientas</a></li>
   </ul>
   <a class="btn-ghost" href="https://wa.me/5213329467402?text=Hola%20Samuel%2C%20quiero%20hablar%20contigo" target="_blank" rel="noopener">Hablar conmigo</a>
 </nav>
@@ -580,7 +584,50 @@ a.ed-project:hover .ed-project-arrow{border-color:var(--accent);color:var(--acce
     <li>Herramientas digitales</li>
     <li>Productividad tecnológica</li>
   </ul>
-  <a class="btn-primary reveal" href="https://wa.me/5213329467402?text=Hola%20Samuel%2C%20quiero%20informaci%C3%B3n%20sobre%20tus%20mentor%C3%ADas" target="_blank" rel="noopener">Solicitar información</a>
+  <div class="ed-hero-ctas reveal">
+    <a class="btn-primary" href="https://wa.me/5213329467402?text=Hola%20Samuel%2C%20quiero%20informaci%C3%B3n%20sobre%20tus%20mentor%C3%ADas" target="_blank" rel="noopener">Solicitar información</a>
+    <a class="btn-ghost" href="#herramientas">Ver herramientas</a>
+  </div>
+</section>
+
+<section class="ed-section" id="herramientas">
+  <div class="ed-section-head reveal">
+    <h2 class="ed-title">Herramientas de mentorías</h2>
+    <p class="eyebrow" style="margin:0">Material de clase</p>
+  </div>
+  <p class="ed-lead reveal" style="margin-bottom:8px">Prompts y recursos listos para copiar y usar con IA. Entra a cada herramienta para ver el paso a paso.</p>
+  <div class="ed-projects">
+    <a class="ed-project reveal" href="/logo-ia">
+      <div class="ed-project-thumb"><img src="logo-ia/slides/slide-01.jpg" alt="Presentación Crea y anima tu logo con IA" loading="lazy"></div>
+      <div>
+        <p class="ed-project-cat">Prompts · Presentación</p>
+        <h3 class="ed-project-title">Crea y anima tu logo con IA</h3>
+        <p class="ed-project-desc">De una idea a una identidad visual en movimiento: crea el logo en ChatGPT, analízalo y anímalo con una IA de video.</p>
+        <span class="ed-tool-cta">Entrar</span>
+      </div>
+      <span class="ed-project-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+    </a>
+    <a class="ed-project reveal" href="/videos-claude">
+      <div class="ed-project-thumb"><img src="videos-claude/slides/slide-01.jpg" alt="Presentación Crea videos con Claude sin salir a cámara" loading="lazy"></div>
+      <div>
+        <p class="ed-project-cat">Prompts · Presentación</p>
+        <h3 class="ed-project-title">Crea videos con Claude sin salir a cámara</h3>
+        <p class="ed-project-desc">Crea la mascota de tu marca y conviértela en el rostro de tus videos para TikTok e Instagram.</p>
+        <span class="ed-tool-cta">Entrar</span>
+      </div>
+      <span class="ed-project-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+    </a>
+    <a class="ed-project reveal" href="/comandos">
+      <div class="ed-project-thumb"><img src="comandos-thumb.jpg" alt="Biblioteca de comandos para ChatGPT" loading="lazy"></div>
+      <div>
+        <p class="ed-project-cat">Biblioteca de prompts</p>
+        <h3 class="ed-project-title">Comandos para ChatGPT</h3>
+        <p class="ed-project-desc">16 comandos listos para copiar: resume, redacta, traduce, analiza y edita imágenes con una sola instrucción.</p>
+        <span class="ed-tool-cta">Entrar</span>
+      </div>
+      <span class="ed-project-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+    </a>
+  </div>
 </section>
 
 <section class="ed-section" id="redes">
@@ -615,6 +662,7 @@ a.ed-project:hover .ed-project-arrow{border-color:var(--accent);color:var(--acce
     <a href="#portafolio">Portafolio</a>
     <a href="#sobre-mi">Sobre mí</a>
     <a href="#mentorias">Mentorías</a>
+    <a href="#herramientas">Herramientas</a>
   </nav>
   <div class="footer-links">
     <a href="https://www.instagram.com/MODOANALISTA_/" target="_blank" rel="noopener">Instagram</a>

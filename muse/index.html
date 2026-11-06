@@ -141,16 +141,16 @@ footer{padding:30px 0 50px;text-align:center;color:var(--mut);font-size:13px;bor
 .modo-corner{position:absolute;right:12px;bottom:12px;width:64px;height:64px;border-radius:14px;object-fit:cover;object-position:50% 20%;border:1px solid rgba(255,255,255,.35);background:#0b100e;z-index:2}
 .hero-visual{width:clamp(280px,34vw,420px)}
 .hero-visual img.portada{width:100%;border-radius:22px;border:1px solid rgba(31,229,138,.55);box-shadow:0 24px 70px -18px rgba(31,229,138,.5);display:block}
-@media(max-width:700px){.slide-grid{grid-template-columns:1fr;gap:14px}.hslide{justify-content:flex-start;overflow-y:auto}}
+@media(max-width:700px){.stage{aspect-ratio:auto;height:640px}.slide-grid{grid-template-columns:1fr;gap:14px}.hslide{justify-content:flex-start;overflow-y:auto}}
 
 .slide-brand{position:absolute;top:16px;left:20px;font-family:'Rajdhani',sans-serif;font-weight:700;font-size:14px;letter-spacing:.04em;text-transform:uppercase;color:#fff;z-index:2}
 .slide-brand b{color:var(--green)}
 .slide-sec{position:absolute;top:14px;right:20px;font-weight:900;font-size:13px;color:#04130b;background:var(--green);padding:4px 10px;border-radius:8px;z-index:2}
 .hl{background:var(--green);color:#04130b;padding:0 10px;border-radius:6px;display:inline-block}
 .hl.pink{background:var(--pink)}
-.band{position:absolute;left:0;right:0;bottom:0;background:#000;color:#fff;font-weight:700;font-size:13px;padding:10px 20px;border-top:1px solid rgba(31,229,138,.4);z-index:2}
+.band{position:absolute;left:0;right:0;bottom:48px;background:#000;color:#fff;font-weight:700;font-size:13px;padding:10px 20px;border-top:1px solid rgba(31,229,138,.4);z-index:2}
 .band b{color:var(--green)}
-.hslide{padding-top:52px;padding-bottom:52px}
+.hslide{padding-top:52px;padding-bottom:104px}
 .presenter{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center}
 .presenter img.photo{width:100%;border-radius:18px;border:1px solid rgba(31,229,138,.5);object-fit:cover;aspect-ratio:4/3}
 .presenter .qr-mini{width:120px;height:120px;background:#fff;border-radius:14px;padding:8px}
@@ -180,9 +180,9 @@ footer{padding:30px 0 50px;text-align:center;color:var(--mut);font-size:13px;bor
     </div>
     </div>
     <div class="hero-visual">
-      <img class="portada" src="img/portada.webp" alt="MODO, el cuervo negro, junto a Muse, el personaje rosa, saludando"/>
+      <img class="portada" src="img/portada.webp?v=4" alt="MODO, el cuervo negro, junto a Muse, el personaje rosa, saludando"/>
       <div class="qr-card" style="width:100%;margin-top:14px">
-        <img src="qr.svg" alt="QR para seguir la presentación de Muse en tu celular"/>
+        <img src="qr.svg?v=4" alt="QR para seguir la presentación de Muse en tu celular"/>
         <b>Escanea y sígueme en tu celular</b>
         <span>Ahí tienes la presentación y los prompts para copiar.</span>
         <small>modo-analista.vercel.app/muse</small>
@@ -199,13 +199,12 @@ footer{padding:30px 0 50px;text-align:center;color:var(--mut);font-size:13px;bor
         <h3>Muse: ¿otro chatbot? <span class="hl">No.</span></h3>
         <p class="lead">Es tu asistente personal de Meta. No solo te responde: hace la tarea por ti.</p>
         <div class="slide-grid"><div class="slide-qr">
-          <img src="qr.svg" alt="QR de la presentación de Muse"/>
+          <img src="qr.svg?v=4" alt="QR de la presentación de Muse"/>
           <p><b>Escanea el QR</b> y sigue esta presentación en tu celular. Los prompts están abajo, listos para copiar.</p>
         </div>
-        <div class="slide-img"><span class="chip pink">MODO + Muse</span><img src="img/portada.webp" alt="MODO junto a Muse"/></div></div>
+        <div class="slide-img"><span class="chip pink">MODO + Muse</span><img src="img/portada.webp?v=4" alt="MODO junto a Muse"/></div></div>
         </div>
-      </div>
-              <div class="band">Escanea el QR. <b>Sígueme en tu celular.</b></div>
+      <div class="band">Escanea el QR. <b>Sígueme en tu celular.</b></div></div>
       <div class="hslide">
         <div class="slide-brand">[ <b>MODO</b> ANALISTA ]</div><div class="slide-sec">02</div>
         <div class="kicker">2 · Qué es Muse</div>
@@ -216,9 +215,8 @@ footer{padding:30px 0 50px;text-align:center;color:var(--mut);font-size:13px;bor
           <li>Trabaja aunque cierres la app.</li>
           <li>Te avisa qué hizo y qué sigue.</li>
         </ul></div>
-        <div class="slide-img"><span class="chip">Trabaja por ti</span><img src="img/trabajando.webp" alt="Muse trabajando en la laptop mientras una persona descansa"/><img class="modo-corner" src="../img/modo/pose13.png" alt="MODO"/></div></div>
-      </div>
-              <div class="band">No solo responde. <b>Hace la tarea por ti.</b></div>
+        <div class="slide-img"><span class="chip">Trabaja por ti</span><img src="img/trabajando.webp?v=4" alt="Muse trabajando en la laptop mientras una persona descansa"/><img class="modo-corner" src="../img/modo/pose13.png" alt="MODO"/></div></div>
+      <div class="band">No solo responde. <b>Hace la tarea por ti.</b></div></div>
       <div class="hslide">
         <div class="slide-brand">[ <b>MODO</b> ANALISTA ]</div><div class="slide-sec">03</div>
         <div class="kicker">3 · La diferencia</div>
@@ -227,9 +225,8 @@ footer{padding:30px 0 50px;text-align:center;color:var(--mut);font-size:13px;bor
           <div class="bad"><b>Un chatbot</b><p>Solo responde. Te da texto y ahí se queda. Tú haces todo lo demás.</p></div>
           <div class="good"><b>Muse</b><p>Hace la tarea. Revisa, organiza, investiga y te entrega el resultado listo.</p></div>
         </div>
-        <div class="slide-img" style="margin-top:16px"><span class="chip">Él trabaja, tú descansas</span><img src="img/trabajando.webp" alt="Muse trabajando en la laptop"/></div>
-      </div>
-              <div class="band">Un chatbot responde. <b>Muse hace.</b></div>
+        <div class="slide-img" style="margin-top:16px"><span class="chip">Él trabaja, tú descansas</span><img src="img/trabajando.webp?v=4" alt="Muse trabajando en la laptop"/></div>
+      <div class="band">Un chatbot responde. <b>Muse hace.</b></div></div>
       <div class="hslide">
         <div class="slide-brand">[ <b>MODO</b> ANALISTA ]</div><div class="slide-sec">04</div>
         <div class="kicker">4 · Qué hace por ti</div>
@@ -239,9 +236,8 @@ footer{padding:30px 0 50px;text-align:center;color:var(--mut);font-size:13px;bor
           <div><span class="ico">🗓️</span><b>Tu agenda</b><p>Organiza tu semana y te prepara el plan, día por día.</p></div>
           <div><span class="ico">🔍</span><b>Investiga</b><p>Busca un tema y te arma un documento, no solo una respuesta.</p></div>
         </div>
-        <div class="slide-img" style="margin-top:16px"><span class="chip">Respuestas listas</span><img src="img/correo.webp" alt="Laptop con correos y respuestas listas, calendario y celular con chat"/></div>
-      </div>
-              <div class="band">Correo, agenda e investigación. <b>Listo para aprobar.</b></div>
+        <div class="slide-img" style="margin-top:16px"><span class="chip">Respuestas listas</span><img src="img/correo.webp?v=4" alt="Laptop con correos y respuestas listas, calendario y celular con chat"/></div>
+      <div class="band">Correo, agenda e investigación. <b>Listo para aprobar.</b></div></div>
       <div class="hslide">
         <div class="slide-brand">[ <b>MODO</b> ANALISTA ]</div><div class="slide-sec">05</div>
         <div class="kicker">5 · Cómo empezar</div>
@@ -251,9 +247,8 @@ footer{padding:30px 0 50px;text-align:center;color:var(--mut);font-size:13px;bor
           <li><b>2 · Crea tu cuenta:</b> entra con tu cuenta Meta, o crea una con tu correo. Ponle nombre a tu Muse.</li>
           <li><b>3 · Pide tu primera tarea:</b> escríbela como si le hablaras a una persona.</li>
         </ul>
-        <div class="slide-img" style="margin-top:16px"><span class="chip">muse.ai</span><img src="img/celular.webp" alt="Celular con el chat de Muse"/></div>
-      </div>
-              <div class="band">3 pasos. <b>Sin complicarte.</b></div>
+        <div class="slide-img" style="margin-top:16px"><span class="chip">muse.ai</span><img src="img/celular.webp?v=4" alt="Celular con el chat de Muse"/></div>
+      <div class="band">3 pasos. <b>Sin complicarte.</b></div></div>
       <div class="hslide">
         <div class="slide-brand">[ <b>MODO</b> ANALISTA ]</div><div class="slide-sec">06</div>
         <div class="kicker">6 · Dónde lo usas</div>
@@ -264,9 +259,8 @@ footer{padding:30px 0 50px;text-align:center;color:var(--mut);font-size:13px;bor
           <li>WhatsApp: también puedes hablarle desde ahí.</li>
           <li>En Windows no hay app: usa la web, funciona igual.</li>
         </ul>
-        <div class="slide-img" style="margin-top:16px"><span class="chip">En tu celular</span><img src="img/celular.webp" alt="Manos con celular chateando con Muse, laptop al fondo"/></div>
-      </div>
-              <div class="band">Web, celular y WhatsApp. <b>Donde estés.</b></div>
+        <div class="slide-img" style="margin-top:16px"><span class="chip">En tu celular</span><img src="img/celular.webp?v=4" alt="Manos con celular chateando con Muse, laptop al fondo"/></div>
+      <div class="band">Web, celular y WhatsApp. <b>Donde estés.</b></div></div>
       <div class="hslide">
         <div class="slide-brand">[ <b>MODO</b> ANALISTA ]</div><div class="slide-sec">07</div>
         <div class="kicker">7 · Cómo pedirle bien</div>
@@ -276,8 +270,7 @@ footer{padding:30px 0 50px;text-align:center;color:var(--mut);font-size:13px;bor
           <li><b>Bien:</b> “Revisa mi correo de hoy y déjame 3 respuestas listas para aprobar”.</li>
           <li>Dile el resultado que quieres, no solo el tema.</li>
         </ul>
-      </div>
-              <div class="band">Qué + para qué + cómo + cuándo.</div>
+      <div class="band">Qué + para qué + cómo + cuándo.</div></div>
       <div class="hslide">
         <div class="slide-brand">[ <b>MODO</b> ANALISTA ]</div><div class="slide-sec">08</div>
         <div class="kicker">8 · Tu primera tarea</div>
@@ -287,8 +280,7 @@ footer{padding:30px 0 50px;text-align:center;color:var(--mut);font-size:13px;bor
           <div><span class="ico">📄</span><b>Un resumen</b><p>“Resume este correo en 3 puntos”.</p></div>
           <div><span class="ico">🗓️</span><b>Un plan</b><p>“Organiza mi mañana en 3 tareas”.</p></div>
         </div>
-      </div>
-              <div class="band">Empieza chico. <b>Empieza seguro.</b></div>
+      <div class="band">Empieza chico. <b>Empieza seguro.</b></div></div>
       <div class="hslide">
         <div class="slide-brand">[ <b>MODO</b> ANALISTA ]</div><div class="slide-sec">09</div>
         <div class="kicker">9 · Conecta solo lo necesario</div>
@@ -298,8 +290,7 @@ footer{padding:30px 0 50px;text-align:center;color:var(--mut);font-size:13px;bor
           <li>Revisa en Ajustes &gt; Permisos qué puede hacer.</li>
           <li>Tú decides qué conecta y qué no. Nada se conecta solo.</li>
         </ul>
-      </div>
-              <div class="band">Primero uno. <b>Luego los demás.</b></div>
+      <div class="band">Primero uno. <b>Luego los demás.</b></div></div>
       <div class="hslide">
         <div class="slide-brand">[ <b>MODO</b> ANALISTA ]</div><div class="slide-sec">10</div>
         <div class="kicker pink">10 · La regla de oro</div>
@@ -309,8 +300,7 @@ footer{padding:30px 0 50px;text-align:center;color:var(--mut);font-size:13px;bor
           <li>Revisa lo que hizo antes de enviarlo.</li>
           <li>Si algo no te gusta, dile: “hazlo más corto” o “cámbialo así”.</li>
         </ul>
-      </div>
-              <div class="band">Nada sensible sin <b>tu aprobación.</b></div>
+      <div class="band">Nada sensible sin <b>tu aprobación.</b></div></div>
       <div class="hslide">
         <div class="slide-brand">[ <b>MODO</b> ANALISTA ]</div><div class="slide-sec">11</div>
         <div class="kicker">11 · Práctica en vivo</div>
@@ -321,20 +311,18 @@ footer{padding:30px 0 50px;text-align:center;color:var(--mut);font-size:13px;bor
           <li>Pídele que investigue un tema y te haga un documento de 1 página.</li>
         </ul>
         <p class="lead">Hazlo ahora, con los prompts de abajo. Copia, pega y ajusta.</p>
-      </div>
-              <div class="band">Reto de 5 minutos. <b>Hazlo ahora.</b></div>
+      <div class="band">Reto de 5 minutos. <b>Hazlo ahora.</b></div></div>
       <div class="hslide">
         <div class="slide-brand">[ <b>MODO</b> ANALISTA ]</div><div class="slide-sec">12</div>
         <div class="kicker">12 · Cierre</div>
         <h3>Ya sabes empezar. <span class="hl">Ahora practica.</span></h3>
         <p class="lead">Guarda esta página. Aquí tienes los prompts. Sigue a @.modo.analista para más tips de IA.</p>
         <div class="slide-grid"><div class="slide-qr">
-          <img src="qr.svg" alt="QR de la presentación de Muse"/>
+          <img src="qr.svg?v=4" alt="QR de la presentación de Muse"/>
           <p><b>Vuelve a escanear</b> si se te perdió la página: modo-analista.vercel.app/muse</p>
         </div>
-        <div class="slide-img"><span class="chip pink">Guárdala</span><img src="img/portada.webp" alt="MODO junto a Muse"/></div></div>
-      </div>
-              <div class="band">Ya sabes empezar. <b>Ahora practica.</b></div>
+        <div class="slide-img"><span class="chip pink">Guárdala</span><img src="img/portada.webp?v=4" alt="MODO junto a Muse"/></div></div>
+      <div class="band">Ya sabes empezar. <b>Ahora practica.</b></div></div>
       <div class="hslide">
         <div class="slide-brand">[ <b>MODO</b> ANALISTA ]</div><div class="slide-sec">13</div>
         <div class="kicker">13 · Cierre — Samuel</div>
@@ -348,7 +336,7 @@ footer{padding:30px 0 50px;text-align:center;color:var(--mut);font-size:13px;bor
             <p class="lead">Coordinador de Data y analista de datos. Mentor en Modo Analista.</p>
             <p class="lead" style="font-weight:700;color:var(--txt)">ANALIZAR HOY, MEJORES DECISIONES MAÑANA.</p>
             <p style="margin-top:14px;font-size:14px;color:var(--mut)">TikTok @.modo.analista · Instagram @MODOANALISTA_</p>
-            <div style="margin-top:14px;display:flex;gap:14px;align-items:center"><img src="qr.svg" alt="QR de la presentación de Muse" style="width:110px;height:110px;background:#fff;border-radius:12px;padding:6px"/><p style="font-size:14px;color:var(--mut)">Escanea para volver a esta clase y copiar los prompts.</p></div>
+            <div style="margin-top:14px;display:flex;gap:14px;align-items:center"><img src="qr.svg?v=4" alt="QR de la presentación de Muse" style="width:110px;height:110px;background:#fff;border-radius:12px;padding:6px"/><p style="font-size:14px;color:var(--mut)">Escanea para volver a esta clase y copiar los prompts.</p></div>
           </div>
         </div>
         <div class="band">Gracias. <b>Sigue a @.modo.analista para más tips de IA.</b></div>

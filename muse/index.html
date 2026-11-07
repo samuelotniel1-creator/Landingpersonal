@@ -34,6 +34,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;
 nav{padding:26px 0;display:flex;justify-content:space-between;align-items:center}
 nav a.link{color:var(--mut);text-decoration:none;font-size:14px;font-weight:500}
 nav a.link:hover{color:var(--green)}
+.back{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border:1px solid rgba(31,229,138,.55);border-radius:999px;color:#dfe5e2;text-decoration:none;font-size:13px;font-weight:700}.back:hover{border-color:var(--green);color:var(--green)}
 .hero{padding:40px 0 56px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:center}
 .hero h1{font-weight:900;font-size:clamp(38px,6.2vw,72px);line-height:.98;letter-spacing:-.025em;text-transform:uppercase}
 .hero h1 .g{background:linear-gradient(180deg,#7dffc4,#1fe58a 60%,#0fa863);-webkit-background-clip:text;background-clip:text;color:transparent;display:block}
@@ -195,7 +196,7 @@ footer{padding:30px 0 50px;text-align:center;color:var(--mut);font-size:13px;bor
 <body>
 <div class="wrap">
   <nav>
-    <div class="brand"><b>Modo</b><span>Analista</span></div>
+    <div style="display:flex;gap:14px;align-items:center"><div class="brand"><b>Modo</b><span>Analista</span></div><a class="back" href="/">← Landing</a></div>
     <a class="link" href="#prompt1">Prompts ↓</a>
   </nav>
 

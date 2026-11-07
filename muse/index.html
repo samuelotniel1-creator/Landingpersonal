@@ -141,7 +141,7 @@ footer{padding:30px 0 50px;text-align:center;color:var(--mut);font-size:13px;bor
 .modo-corner{position:absolute;right:12px;bottom:12px;width:64px;height:64px;border-radius:14px;object-fit:cover;object-position:50% 20%;border:1px solid rgba(255,255,255,.35);background:#0b100e;z-index:2}
 .hero-visual{width:clamp(280px,34vw,420px)}
 .hero-visual img.portada{width:100%;border-radius:22px;border:1px solid rgba(31,229,138,.55);box-shadow:0 24px 70px -18px rgba(31,229,138,.5);display:block}
-@media(max-width:700px){.stage{aspect-ratio:auto;height:640px}.slide-grid{grid-template-columns:1fr;gap:14px}.hslide{justify-content:flex-start;overflow-y:auto}}
+@media(max-width:700px){.stage{aspect-ratio:auto;height:auto;min-height:560px}.slide-grid{grid-template-columns:1fr;gap:14px}.hslide{position:relative;inset:auto;justify-content:flex-start;overflow:visible}.presenter{grid-template-columns:1fr}}
 
 .slide-brand{position:absolute;top:16px;left:20px;font-family:'Rajdhani',sans-serif;font-weight:700;font-size:14px;letter-spacing:.04em;text-transform:uppercase;color:#fff;z-index:2}
 .slide-brand b{color:var(--green)}
@@ -203,7 +203,6 @@ footer{padding:30px 0 50px;text-align:center;color:var(--mut);font-size:13px;bor
           <p><b>Escanea el QR</b> y sigue esta presentación en tu celular. Los prompts están abajo, listos para copiar.</p>
         </div>
         <div class="slide-img"><span class="chip pink">MODO + Muse</span><img src="/muse/img/portada.webp?v=5" alt="MODO junto a Muse"/></div></div>
-        </div>
       <div class="band">Escanea el QR. <b>Sígueme en tu celular.</b></div></div>
       <div class="hslide">
         <div class="slide-brand">[ <b>MODO</b> ANALISTA ]</div><div class="slide-sec">02</div>

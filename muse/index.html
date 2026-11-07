@@ -104,6 +104,7 @@ footer{padding:30px 0 50px;text-align:center;color:var(--mut);font-size:13px;bor
 .stage:fullscreen .slide-qr p{font-size:clamp(18px,1.5vw,24px);max-width:360px}
 .stage:fullscreen .slide-qr{gap:28px}
 .stage:fullscreen .presenter .qr-mini{width:190px !important;height:190px !important}
+.stage:fullscreen .presenter h3{font-size:clamp(40px,3.6vw,58px) !important}
 .stage:fullscreen .band{font-size:18px;padding-top:16px;padding-bottom:16px}
 .stage:fullscreen .dbar{font-size:16px;padding:14px 20px}
 .stage:fullscreen .slide-brand{font-size:18px}
@@ -163,7 +164,7 @@ footer{padding:30px 0 50px;text-align:center;color:var(--mut);font-size:13px;bor
 .slide-img img.modo-corner{position:absolute;right:12px;bottom:12px;width:64px;height:64px;aspect-ratio:1/1;border-radius:14px;object-fit:cover;object-position:50% 20%;border:1px solid rgba(255,255,255,.35);background:#0b100e;z-index:2}
 .hero-visual{width:clamp(280px,34vw,420px)}
 .hero-visual img.portada{width:100%;border-radius:22px;border:1px solid rgba(31,229,138,.55);box-shadow:0 24px 70px -18px rgba(31,229,138,.5);display:block}
-@media(max-width:700px){.stage{aspect-ratio:auto;height:auto;min-height:560px}.slide-grid{grid-template-columns:1fr;gap:14px;flex:none}.hslide{position:relative;inset:auto;justify-content:flex-start;overflow:visible}.slide-img{flex:none}.slide-img img{height:auto;aspect-ratio:16/10}.presenter{grid-template-columns:1fr;flex:none}.dnav{display:none}}
+@media(max-width:700px){.stage{aspect-ratio:auto;height:auto;min-height:560px}.slide-grid{grid-template-columns:1fr;gap:14px;flex:none}.hslide{position:relative;inset:auto;justify-content:flex-start;overflow:visible}.slide-img{flex:none}.slide-img img{height:auto;aspect-ratio:16/10}.presenter{grid-template-columns:1fr;flex:none}.presenter img.photo{height:auto;max-height:340px;flex:none}.dnav{display:none}}
 
 @keyframes hslideIn{from{opacity:0;transform:translateX(28px)}to{opacity:1;transform:translateX(0)}}
 @keyframes hslideInLeft{from{opacity:0;transform:translateX(-28px)}to{opacity:1;transform:translateX(0)}}
@@ -178,8 +179,10 @@ footer{padding:30px 0 50px;text-align:center;color:var(--mut);font-size:13px;bor
 .band b{color:var(--green)}
 .hslide{padding-top:44px;padding-bottom:44px}
 @media(min-width:701px){.hslide{--px:76px;padding-left:76px;padding-right:76px}}
-.presenter{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center}
-.presenter img.photo{width:100%;max-height:300px;border-radius:18px;border:1px solid rgba(31,229,138,.5);object-fit:cover;aspect-ratio:4/3}
+.presenter{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch;flex:1 1 0;min-height:0}
+.presenter>div:last-child{align-self:center}
+.presenter>div:first-child{display:flex;flex-direction:column;min-height:0}
+.presenter img.photo{flex:1 1 0;min-height:0;width:100%;height:100%;max-height:none;border-radius:18px;border:1px solid rgba(31,229,138,.5);object-fit:contain;aspect-ratio:auto;background:transparent}
 .presenter .qr-mini{width:120px;height:120px;background:#fff;border-radius:14px;padding:8px}
 </style>
 </head>
@@ -367,7 +370,7 @@ footer{padding:30px 0 50px;text-align:center;color:var(--mut);font-size:13px;bor
             <p class="lead">Coordinador de Data y analista de datos. Mentor en Modo Analista.</p>
             <p class="lead" style="font-weight:700;color:var(--txt)">ANALIZAR HOY, MEJORES DECISIONES MAÑANA.</p>
             <p style="margin-top:14px;font-size:14px;color:var(--mut)">TikTok @.modo.analista · Instagram @MODOANALISTA_</p>
-            <div style="margin-top:14px;display:flex;gap:14px;align-items:center"><img src="/muse/qr-landing.svg" alt="QR a la página principal de Modo Analista" style="width:160px;height:160px;background:#fff;border-radius:12px;padding:8px"/><p style="font-size:14px;color:var(--mut)">Escanea para ir a la página principal y seguirme en mis redes.</p></div>
+            <div style="margin-top:14px;display:flex;gap:14px;align-items:center"><img class="qr-mini" src="/muse/qr-landing.svg" alt="QR a la página principal de Modo Analista" style="width:160px;height:160px;background:#fff;border-radius:12px;padding:8px"/><p style="font-size:14px;color:var(--mut)">Escanea para ir a la página principal y seguirme en mis redes.</p></div>
           </div>
         </div>
         <div class="band">Gracias. <b>Sigue a @.modo.analista para más tips de IA.</b></div>

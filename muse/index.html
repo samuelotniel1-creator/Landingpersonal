@@ -136,9 +136,10 @@ footer{padding:30px 0 50px;text-align:center;color:var(--mut);font-size:13px;bor
 .slide-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:24px;align-items:center;margin-top:6px}
 .slide-img{position:relative;border-radius:18px;overflow:hidden;border:1px solid rgba(31,229,138,.55);box-shadow:0 20px 60px -20px rgba(31,229,138,.5);background:#000}
 .slide-img img{width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:16/10}
+.slide-img.contain img{object-fit:contain;aspect-ratio:16/8;background:radial-gradient(400px 200px at 50% 0%,rgba(31,229,138,.18),transparent 70%),#070a09}
 .chip{position:absolute;top:12px;left:12px;background:#1fe58a;color:#04130b;font-weight:800;font-size:12px;padding:6px 12px;border-radius:999px;letter-spacing:.04em;text-transform:uppercase;z-index:2}
 .chip.pink{background:#ff9ecf}
-.modo-corner{position:absolute;right:12px;bottom:12px;width:64px;height:64px;border-radius:14px;object-fit:cover;object-position:50% 20%;border:1px solid rgba(255,255,255,.35);background:#0b100e;z-index:2}
+.slide-img img.modo-corner{position:absolute;right:12px;bottom:12px;width:64px;height:64px;aspect-ratio:1/1;border-radius:14px;object-fit:cover;object-position:50% 20%;border:1px solid rgba(255,255,255,.35);background:#0b100e;z-index:2}
 .hero-visual{width:clamp(280px,34vw,420px)}
 .hero-visual img.portada{width:100%;border-radius:22px;border:1px solid rgba(31,229,138,.55);box-shadow:0 24px 70px -18px rgba(31,229,138,.5);display:block}
 @media(max-width:700px){.stage{aspect-ratio:auto;height:auto;min-height:560px}.slide-grid{grid-template-columns:1fr;gap:14px}.hslide{position:relative;inset:auto;justify-content:flex-start;overflow:visible}.presenter{grid-template-columns:1fr}.dnav{display:none}}
@@ -270,6 +271,7 @@ footer{padding:30px 0 50px;text-align:center;color:var(--mut);font-size:13px;bor
           <li><b>Bien:</b> “Revisa mi correo de hoy y déjame 3 respuestas listas para aprobar”.</li>
           <li>Dile el resultado que quieres, no solo el tema.</li>
         </ul>
+        <div class="slide-img contain" style="margin-top:16px"><span class="chip">Pídele bien</span><img src="/img/modo/pose14.png" alt="MODO explicando la fórmula para pedirle bien a Muse"/></div>
       <div class="band">Qué + para qué + cómo + cuándo.</div></div>
       <div class="hslide">
         <div class="slide-brand">[ <b>MODO</b> ANALISTA ]</div><div class="slide-sec">08</div>
@@ -280,6 +282,7 @@ footer{padding:30px 0 50px;text-align:center;color:var(--mut);font-size:13px;bor
           <div><span class="ico">📄</span><b>Un resumen</b><p>“Resume este correo en 3 puntos”.</p></div>
           <div><span class="ico">🗓️</span><b>Un plan</b><p>“Organiza mi mañana en 3 tareas”.</p></div>
         </div>
+        <div class="slide-img contain" style="margin-top:16px"><span class="chip">Empieza chico</span><img src="/img/modo/pose23.png" alt="MODO mostrando una idea para tu primera tarea"/></div>
       <div class="band">Empieza chico. <b>Empieza seguro.</b></div></div>
       <div class="hslide">
         <div class="slide-brand">[ <b>MODO</b> ANALISTA ]</div><div class="slide-sec">09</div>
@@ -290,6 +293,7 @@ footer{padding:30px 0 50px;text-align:center;color:var(--mut);font-size:13px;bor
           <li>Revisa en Ajustes &gt; Permisos qué puede hacer.</li>
           <li>Tú decides qué conecta y qué no. Nada se conecta solo.</li>
         </ul>
+        <div class="slide-img contain" style="margin-top:16px"><span class="chip">Tú decides</span><img src="/img/modo/pose20.png" alt="MODO presentando: tú decides qué conecta Muse"/></div>
       <div class="band">Primero uno. <b>Luego los demás.</b></div></div>
       <div class="hslide">
         <div class="slide-brand">[ <b>MODO</b> ANALISTA ]</div><div class="slide-sec">10</div>
@@ -300,6 +304,7 @@ footer{padding:30px 0 50px;text-align:center;color:var(--mut);font-size:13px;bor
           <li>Revisa lo que hizo antes de enviarlo.</li>
           <li>Si algo no te gusta, dile: “hazlo más corto” o “cámbialo así”.</li>
         </ul>
+        <div class="slide-img contain" style="margin-top:16px"><span class="chip">Tú apruebas</span><img src="/img/modo/pose13.png" alt="MODO con el pulgar arriba: tú siempre apruebas"/></div>
       <div class="band">Nada sensible sin <b>tu aprobación.</b></div></div>
       <div class="hslide">
         <div class="slide-brand">[ <b>MODO</b> ANALISTA ]</div><div class="slide-sec">11</div>
@@ -311,6 +316,7 @@ footer{padding:30px 0 50px;text-align:center;color:var(--mut);font-size:13px;bor
           <li>Pídele que investigue un tema y te haga un documento de 1 página.</li>
         </ul>
         <p class="lead">Hazlo ahora, con los prompts de abajo. Copia, pega y ajusta.</p>
+        <div class="slide-img contain" style="margin-top:16px"><span class="chip">Reto 5 min</span><img src="/img/modo/pose01.png" alt="MODO saludando: reto de 5 minutos con Muse"/></div>
       <div class="band">Reto de 5 minutos. <b>Hazlo ahora.</b></div></div>
       <div class="hslide">
         <div class="slide-brand">[ <b>MODO</b> ANALISTA ]</div><div class="slide-sec">12</div>
@@ -336,7 +342,7 @@ footer{padding:30px 0 50px;text-align:center;color:var(--mut);font-size:13px;bor
             <p class="lead">Coordinador de Data y analista de datos. Mentor en Modo Analista.</p>
             <p class="lead" style="font-weight:700;color:var(--txt)">ANALIZAR HOY, MEJORES DECISIONES MAÑANA.</p>
             <p style="margin-top:14px;font-size:14px;color:var(--mut)">TikTok @.modo.analista · Instagram @MODOANALISTA_</p>
-            <div style="margin-top:14px;display:flex;gap:14px;align-items:center"><img src="/muse/qr.svg?v=5" alt="QR de la presentación de Muse" style="width:110px;height:110px;background:#fff;border-radius:12px;padding:6px"/><p style="font-size:14px;color:var(--mut)">Escanea para volver a esta clase y copiar los prompts.</p></div>
+            <div style="margin-top:14px;display:flex;gap:14px;align-items:center"><img src="/muse/qr-landing.svg" alt="QR a la página principal de Modo Analista" style="width:110px;height:110px;background:#fff;border-radius:12px;padding:6px"/><p style="font-size:14px;color:var(--mut)">Escanea para ir a la página principal y seguirme en mis redes.</p></div>
           </div>
         </div>
         <div class="band">Gracias. <b>Sigue a @.modo.analista para más tips de IA.</b></div>

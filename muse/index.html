@@ -97,6 +97,7 @@ footer{padding:30px 0 50px;text-align:center;color:var(--mut);font-size:13px;bor
 .stage:fullscreen .cards p,.stage:fullscreen .vs p{font-size:clamp(16px,1.4vw,20px)}
 .stage:fullscreen .slide-qr img{width:380px;height:380px}
 .stage:fullscreen .qr14-wrap{width:420px;height:420px}
+.stage:fullscreen .qr14 img.modo-corner{width:64px;height:64px}
 .stage:fullscreen .slide-grid .slide-img{max-height:440px;height:100%}
 .stage:fullscreen .slide-qr p{font-size:clamp(18px,1.5vw,24px);max-width:360px}
 .stage:fullscreen .slide-qr{gap:28px}
@@ -135,10 +136,10 @@ footer{padding:30px 0 50px;text-align:center;color:var(--mut);font-size:13px;bor
 .slide-qr img{width:240px;height:240px;max-width:100%;background:#fff;border-radius:16px;padding:10px;flex:none}
 .slide-qr p{font-size:clamp(16px,2vw,20px);color:var(--mut);max-width:300px}
 .slide-qr p b{color:var(--txt)}
-.qr14{flex:1 1 0;min-height:0;display:flex;align-items:center;justify-content:center;margin-top:14px}
+.qr14{flex:1 1 0;min-height:0;display:flex;align-items:center;justify-content:center;gap:16px;margin-top:14px}
 .qr14-wrap{position:relative;width:300px;height:300px;flex:none}
 .qr14-wrap>img.qr{width:100%;height:100%;background:#fff;border-radius:16px;padding:10px;display:block}
-.qr14-wrap img.modo-corner{position:absolute;right:-12px;bottom:-12px;width:64px;height:64px;aspect-ratio:1/1;border-radius:14px;object-fit:cover;object-position:50% 20%;border:1px solid rgba(255,255,255,.35);background:#0b100e;z-index:2}
+.qr14 img.modo-corner{width:56px;height:56px;aspect-ratio:1/1;border-radius:14px;object-fit:cover;object-position:50% 20%;border:1px solid rgba(255,255,255,.35);background:#0b100e;flex:none}
 .dnav{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,.25);background:rgba(5,8,7,.65);color:#fff;font-size:26px;line-height:1;cursor:pointer;display:grid;place-items:center;backdrop-filter:blur(6px);transition:background .2s,transform .15s;z-index:3}
 .dnav:hover{background:var(--green);color:#04130b}
 .dnav:active{transform:translateY(-50%) scale(.94)}
@@ -166,7 +167,7 @@ footer{padding:30px 0 50px;text-align:center;color:var(--mut);font-size:13px;bor
 .slide-img img.modo-corner{position:absolute;right:12px;bottom:12px;width:64px;height:64px;aspect-ratio:1/1;border-radius:14px;object-fit:cover;object-position:50% 20%;border:1px solid rgba(255,255,255,.35);background:#0b100e;z-index:2}
 .hero-visual{width:clamp(280px,34vw,420px)}
 .hero-visual img.portada{width:100%;border-radius:22px;border:1px solid rgba(31,229,138,.55);box-shadow:0 24px 70px -18px rgba(31,229,138,.5);display:block}
-@media(max-width:700px){.stage{aspect-ratio:auto;height:auto;min-height:560px}.slide-grid{grid-template-columns:1fr;gap:14px;flex:none}.hslide{position:relative;inset:auto;justify-content:flex-start;overflow:visible}.slide-img{flex:none}.slide-img img{height:auto;aspect-ratio:16/10}.dnav{display:none}.qr14-wrap{width:260px;height:260px}}
+@media(max-width:700px){.stage{aspect-ratio:auto;height:auto;min-height:560px}.slide-grid{grid-template-columns:1fr;gap:14px;flex:none}.hslide{position:relative;inset:auto;justify-content:flex-start;overflow:visible}.slide-img{flex:none}.slide-img img{height:auto;aspect-ratio:16/10}.dnav{display:none}.qr14{flex:none}.qr14-wrap{width:260px;height:260px}.qr14 img.modo-corner{width:48px;height:48px}}
 
 @keyframes hslideIn{from{opacity:0;transform:translateX(28px)}to{opacity:1;transform:translateX(0)}}
 @keyframes hslideInLeft{from{opacity:0;transform:translateX(-28px)}to{opacity:1;transform:translateX(0)}}
@@ -384,7 +385,7 @@ footer{padding:30px 0 50px;text-align:center;color:var(--mut);font-size:13px;bor
         <div class="kicker">14 · Comunidad — WhatsApp</div>
         <h3>Únete a la <span class="hl">comunidad</span></h3>
         <p class="lead">Escanea el código con la cámara de WhatsApp y entra al grupo.</p>
-        <div class="qr14"><div class="qr14-wrap"><img class="qr" src="/muse/img/qr-comunidad.png?v=1" alt="QR para unirse a la comunidad de WhatsApp de Modo Analista"/><img class="modo-corner" src="/img/modo/pose13.png" alt="MODO"/></div></div>
+        <div class="qr14"><div class="qr14-wrap"><img class="qr" src="/muse/img/qr-comunidad.png?v=1" alt="QR para unirse a la comunidad de WhatsApp de Modo Analista"/></div><img class="modo-corner" src="/img/modo/pose13.png" alt="MODO"/></div>
       <div class="band">Entre todos nos ayudamos. <b>Comunidad Modo Analista.</b></div></div>
       <button class="dnav prev" type="button" aria-label="Diapositiva anterior">‹</button>
       <button class="dnav next" type="button" aria-label="Diapositiva siguiente">›</button>

@@ -69,6 +69,9 @@ nav a.link:hover{color:var(--green)}
 .btn:active{transform:translateY(0) scale(.98)}
 .btn svg{width:18px;height:18px}
 .btn.ok{background:#fff;color:#04130b;box-shadow:0 8px 30px -8px #fff}
+.cta-btn{cursor:pointer;display:inline-flex;align-items:center;gap:9px;padding:13px 22px;border-radius:14px;font-weight:800;font-size:15px;color:#04130b;background:var(--green);text-decoration:none;transition:transform .15s,box-shadow .2s,filter .2s;box-shadow:0 8px 30px -8px var(--green)}
+.cta-btn:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.cta-btn:active{transform:translateY(0) scale(.98)}
 .pbody{position:relative;margin:0 26px 26px;border:1px solid var(--line);border-radius:18px;background:#040605}
 .pbody pre{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13.5px;line-height:1.7;color:#d3dcd8;white-space:pre-wrap;word-wrap:break-word;padding:22px;max-height:340px;overflow:auto;transition:max-height .4s ease}
 .pbody.open pre{max-height:none}
@@ -109,6 +112,7 @@ footer{padding:30px 0 50px;text-align:center;color:var(--mut);font-size:13px;bor
 .stage:fullscreen .slide-brand{font-size:18px}
 .stage:fullscreen .slide-sec{font-size:16px;padding:6px 14px}
 .stage:fullscreen .chip{font-size:15px;padding:8px 16px}
+.stage:fullscreen .cta-btn{font-size:18px;padding:16px 28px}
 .hslide{position:absolute;inset:0;display:none;--px:clamp(20px,4vw,48px);padding:44px var(--px) 44px;flex-direction:column;justify-content:flex-start;overflow:hidden;background:radial-gradient(600px 300px at 85% 0%,rgba(31,229,138,.14),transparent 60%),linear-gradient(180deg,#0a0f0d,#050807)}
 .hslide.on{display:flex}
 .hslide .kicker{font-size:12px;letter-spacing:3px;font-weight:800;color:var(--green);text-transform:uppercase;margin-bottom:12px}
@@ -152,7 +156,7 @@ footer{padding:30px 0 50px;text-align:center;color:var(--mut);font-size:13px;bor
 .thumbs button:hover{color:var(--txt)}
 .thumbs button.on{color:#04130b;background:var(--green);border-color:var(--green)}
 @media(max-width:700px){.hero{grid-template-columns:1fr}.cards{grid-template-columns:1fr}.vs{grid-template-columns:1fr}.slide-qr{flex-direction:column;align-items:flex-start;gap:14px}.slide-qr img{width:120px;height:120px}}
-@media(max-width:560px){.phead{padding:20px 18px 14px}.pbody{margin:0 14px 14px}.btn{width:100%;justify-content:center}.dnav{width:40px;height:40px;font-size:22px}.dnav.prev{left:8px}.dnav.next{right:8px}.hslide{--px:18px;padding:18px}}
+@media(max-width:560px){.phead{padding:20px 18px 14px}.pbody{margin:0 14px 14px}.btn{width:100%;justify-content:center}.cta-btn{width:100%;justify-content:center}.dnav{width:40px;height:40px;font-size:22px}.dnav.prev{left:8px}.dnav.next{right:8px}.hslide{--px:18px;padding:18px}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important;animation:none!important}}
 
 .slide-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:24px;align-items:stretch;margin-top:4px;flex:1 1 0;min-height:0;overflow:hidden}
@@ -282,6 +286,7 @@ footer{padding:30px 0 50px;text-align:center;color:var(--mut);font-size:13px;bor
           <li><b>2 · Crea tu cuenta:</b> entra con tu cuenta Meta, o crea una con tu correo. Ponle nombre a tu Muse.</li>
           <li><b>3 · Pide tu primera tarea:</b> escríbela como si le hablaras a una persona.</li>
         </ul>
+        <div style="margin-top:16px;flex:none"><a class="cta-btn" href="https://muse.ai" target="_blank" rel="noopener">Abrir Muse.ai ↗</a></div>
         <div class="slide-img" style="margin-top:16px"><span class="chip">muse.ai</span><img src="/muse/img/celular.webp?v=5" alt="Celular con el chat de Muse"/></div>
       <div class="band">3 pasos. <b>Sin complicarte.</b></div></div>
       <div class="hslide">

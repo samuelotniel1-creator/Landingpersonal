@@ -278,32 +278,6 @@ a.ed-project:hover .ed-project-arrow{border-color:var(--accent);color:var(--acce
 .ed-role-tag{color:var(--accent);font-weight:700;font-size:13px;margin:0 0 16px;letter-spacing:.04em;text-transform:uppercase}
 .ed-about-text p.ed-bio{font-size:15px;color:var(--ed-muted);line-height:1.75;max-width:52ch}
 
-/* FAQ — native <details>, works without JS */
-.ed-faq-grid{display:grid;grid-template-columns:1fr 250px;gap:56px;align-items:center}
-.ed-faq-list{border-bottom:1px solid var(--ed-line)}
-.ed-faq-list details{border-top:1px solid var(--ed-line)}
-.ed-faq-list summary{
-  display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:64px;padding:12px 0;
-  cursor:pointer;list-style:none;font-size:16px;font-weight:700;color:var(--text);
-}
-.ed-faq-list summary::-webkit-details-marker{display:none}
-.ed-faq-list summary::after{
-  content:"";flex:none;width:12px;height:12px;margin-right:6px;
-  border-right:2px solid var(--accent);border-bottom:2px solid var(--accent);
-  transform:rotate(45deg) translate(-2px,-2px);transition:transform .25s ease;
-}
-.ed-faq-list details[open] summary::after{transform:rotate(-135deg) translate(-2px,-2px)}
-.ed-faq-list summary:hover{color:var(--accent)}
-.ed-faq-list .faq-a{padding:0 40px 24px 0;max-width:62ch}
-.ed-faq-list .faq-a p{margin:0;font-size:14.5px;line-height:1.7;color:var(--ed-muted)}
-.ed-faq-list .faq-a a{color:var(--accent)}
-.ed-faq-crow{display:block;width:100%;max-width:250px;justify-self:end}
-.ed-faq-crow img{width:100%;height:auto;display:block}
-@media(prefers-reduced-motion:no-preference){
-  @keyframes faqIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
-  .ed-faq-list details[open] .faq-a{animation:faqIn .28s ease-out}
-}
-
 /* Cómo trabajamos — minimal numbered rows */
 .ed-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0 32px}
 .ed-step{border-top:1px solid var(--ed-line);padding-top:22px}
@@ -326,7 +300,7 @@ a.ed-project:hover .ed-project-arrow{border-color:var(--accent);color:var(--acce
 .cta-mail{margin:18px 0 0;font-size:13.5px;color:var(--ed-muted)}
 .cta-mail a{color:var(--text);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--accent)}
 .cta-mail a:hover{color:var(--accent)}
-.cta-art{display:block;border:1px solid var(--ed-line);border-radius:6px;overflow:hidden;background:#000}
+.cta-art{display:block;width:100%;max-width:300px;justify-self:center}
 .cta-art img{width:100%;height:auto;display:block}
 
 /* Footer */
@@ -369,22 +343,13 @@ a.ed-project:hover .ed-project-arrow{border-color:var(--accent);color:var(--acce
   .ed-cta-final{grid-template-columns:1fr;gap:32px;padding:56px 0;text-align:center}
   .ed-cta-final .ed-lead{margin-left:auto;margin-right:auto}
   .cta-actions{justify-content:center}
+  .cta-art{max-width:200px}
   .ed-services .ed-service{grid-column:1/-1;min-height:0}
   .ed-service-icon{padding-bottom:20px}
   #portafolio .ed-projects{grid-template-columns:1fr;gap:36px}
-  .ed-faq-grid{grid-template-columns:1fr;gap:28px}
-  .ed-faq-crow{justify-self:center;max-width:200px}
-  .ed-faq-list .faq-a{padding-right:8px}
+
 }
 </style>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"¿Cuánto cuesta trabajar contigo?","acceptedAnswer":{"@type":"Answer","text":"Depende de lo que necesites resolver, así que no manejo una tarifa fija publicada. Cuéntame tu caso por WhatsApp o por correo y lo platicamos."}},
-{"@type":"Question","name":"¿Cuánto tiempo toma un proyecto?","acceptedAnswer":{"@type":"Answer","text":"Depende del alcance. Primero platicamos el problema y definimos el enfoque más simple para tu caso; con eso claro, acordamos los tiempos antes de construir."}},
-{"@type":"Question","name":"¿Trabajas con negocios pequeños?","acceptedAnswer":{"@type":"Answer","text":"Sí. Ayudo a profesionales y negocios a trabajar de forma más eficiente con la tecnología que ya tienen a su alcance."}},
-{"@type":"Question","name":"¿Cómo es una mentoría?","acceptedAnswer":{"@type":"Answer","text":"Son sesiones 1:1 personalizadas sobre datos, IA, automatización y herramientas digitales, a tu ritmo y para tu contexto."}}
-]}
-</script>
 </head>
 <body>
 
@@ -639,34 +604,6 @@ a.ed-project:hover .ed-project-arrow{border-color:var(--accent);color:var(--acce
 <!-- PRUEBA SOCIAL (pendiente): cuando haya cifras o testimonios reales, agregar aquí una franja con números animados
      y testimonios. No se publica nada hasta tener datos verificables. -->
 
-<section class="ed-section ed-faq" id="faq">
-  <div class="ed-section-head reveal">
-    <h2 class="ed-title">Preguntas frecuentes</h2>
-    <p class="eyebrow" style="margin:0">Antes de escribirme</p>
-  </div>
-  <div class="ed-faq-grid">
-    <div class="ed-faq-list reveal">
-      <details>
-        <summary>¿Cuánto cuesta trabajar contigo?</summary>
-        <div class="faq-a"><p>Depende de lo que necesites resolver, así que no manejo una tarifa fija publicada. Cuéntame tu caso por WhatsApp o por correo y lo platicamos.</p></div>
-      </details>
-      <details>
-        <summary>¿Cuánto tiempo toma un proyecto?</summary>
-        <div class="faq-a"><p>Depende del alcance. Primero platicamos el problema y definimos el enfoque más simple para tu caso; con eso claro, acordamos los tiempos antes de construir.</p></div>
-      </details>
-      <details>
-        <summary>¿Trabajas con negocios pequeños?</summary>
-        <div class="faq-a"><p>Sí. Ayudo a profesionales y negocios a trabajar de forma más eficiente con la tecnología que ya tienen a su alcance.</p></div>
-      </details>
-      <details>
-        <summary>¿Cómo es una mentoría?</summary>
-        <div class="faq-a"><p>Son sesiones 1:1 personalizadas sobre datos, IA, automatización y herramientas digitales, a tu ritmo y para tu contexto. Puedes ver ejemplos del material en las <a href="#herramientas">herramientas de mentorías</a>.</p></div>
-      </details>
-    </div>
-    <picture class="ed-faq-crow reveal"><source srcset="faq-cuervo.webp" type="image/webp"><img src="modo-cuervo.png" alt="Modo, el cuervo de Modo Analista, con el pulgar arriba" width="840" height="824" loading="lazy" decoding="async"></picture>
-  </div>
-</section>
-
 <section class="ed-cta-final reveal" id="contacto">
   <div>
     <h2 class="ed-title">¿Tienes un proceso que podría hacerse mejor?</h2>
@@ -677,7 +614,7 @@ a.ed-project:hover .ed-project-arrow{border-color:var(--accent);color:var(--acce
     </div>
     <p class="cta-mail">O escríbeme a <a href="mailto:modo.analista1@gmail.com">modo.analista1@gmail.com</a></p>
   </div>
-  <picture class="cta-art"><source srcset="cta-mascotas.webp" type="image/webp"><img src="muse/img/portada.webp" alt="Modo, el cuervo, y Muse, el personaje rosa, juntos" width="1100" height="619" loading="lazy" decoding="async"></picture>
+  <picture class="cta-art"><source srcset="cta-cuervo.webp" type="image/webp"><img src="modo-cuervo.png" alt="Modo, el cuervo de Modo Analista, con el pulgar arriba" width="840" height="824" loading="lazy" decoding="async"></picture>
 </section>
 
 <footer class="site-footer reveal">

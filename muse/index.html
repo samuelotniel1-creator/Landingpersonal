@@ -163,15 +163,17 @@ footer{padding:30px 0 50px;text-align:center;color:var(--mut);font-size:13px;bor
 .slide-grid ul{margin-top:0}
 .slide-img{position:relative;flex:1 1 0;min-height:140px;border-radius:18px;overflow:hidden;border:1px solid rgba(31,229,138,.55);box-shadow:0 20px 60px -20px rgba(31,229,138,.5);background:#000}
 .slide-img img{width:100%;height:100%;object-fit:contain;display:block;aspect-ratio:auto;background:#070a09}
+.slide-img video{width:100%;height:100%;object-fit:contain;display:block;aspect-ratio:auto;background:#070a09}
 .slide-img.contain img{object-fit:contain;aspect-ratio:16/8;background:radial-gradient(400px 200px at 50% 0%,rgba(31,229,138,.18),transparent 70%),#070a09}
 .chip{position:absolute;top:12px;left:12px;background:#1fe58a;color:#04130b;font-weight:800;font-size:12px;padding:6px 12px;border-radius:999px;letter-spacing:.04em;text-transform:uppercase;z-index:2}
 .chip.pink{background:#ff9ecf}
 .slide-grid .slide-img{flex:none;height:100%;max-height:235px}
 .slide-grid .slide-img img{height:100%;object-fit:contain;object-position:center;aspect-ratio:auto;background:#070a09}
+.slide-grid .slide-img video{height:100%;object-fit:contain;object-position:center;aspect-ratio:auto;background:#070a09}
 .slide-img img.modo-corner{position:absolute;right:12px;bottom:12px;width:64px;height:64px;aspect-ratio:1/1;border-radius:14px;object-fit:cover;object-position:50% 20%;border:1px solid rgba(255,255,255,.35);background:#0b100e;z-index:2}
 .hero-visual{width:clamp(280px,34vw,420px)}
 .hero-visual img.portada{width:100%;border-radius:22px;border:1px solid rgba(31,229,138,.55);box-shadow:0 24px 70px -18px rgba(31,229,138,.5);display:block}
-@media(max-width:700px){.stage{aspect-ratio:auto;height:auto;min-height:560px}.slide-grid{grid-template-columns:1fr;gap:14px;flex:none}.hslide{position:relative;inset:auto;justify-content:flex-start;overflow:visible}.slide-img{flex:none}.slide-img img{height:auto;aspect-ratio:16/10}.dnav{display:none}.qr14{flex:none}.qr14-wrap{width:260px;height:260px}.qr14 img.modo-corner{width:48px;height:48px}}
+@media(max-width:700px){.stage{aspect-ratio:auto;height:auto;min-height:560px}.slide-grid{grid-template-columns:1fr;gap:14px;flex:none}.hslide{position:relative;inset:auto;justify-content:flex-start;overflow:visible}.slide-img{flex:none}.slide-img img,.slide-img video{height:auto;aspect-ratio:16/10}.dnav{display:none}.qr14{flex:none}.qr14-wrap{width:260px;height:260px}.qr14 img.modo-corner{width:48px;height:48px}}
 
 @keyframes hslideIn{from{opacity:0;transform:translateX(28px)}to{opacity:1;transform:translateX(0)}}
 @keyframes hslideInLeft{from{opacity:0;transform:translateX(-28px)}to{opacity:1;transform:translateX(0)}}
@@ -242,7 +244,7 @@ footer{padding:30px 0 50px;text-align:center;color:var(--mut);font-size:13px;bor
           <img src="/muse/qr.svg?v=5" alt="QR de la presentación de Muse"/>
           <p><b>Escanea el QR</b> y sigue esta presentación en tu celular. Los prompts están abajo, listos para copiar.</p>
         </div>
-        <div class="slide-img"><span class="chip pink">MODO + Muse</span><img src="/muse/img/portada.webp?v=5" alt="MODO junto a Muse"/></div></div>
+        <div class="slide-img"><span class="chip pink">MODO + Muse</span><video autoplay loop muted playsinline preload="auto" poster="/muse/img/portada.webp?v=5" src="/muse/img/jolly-saludando.mp4?v=1" aria-label="MODO junto a Muse, Jolly saludando"></video></div></div>
       <div class="band">Escanea el QR. <b>Sígueme en tu celular.</b></div></div>
       <div class="hslide">
         <div class="slide-brand">[ <b>MODO</b> ANALISTA ]</div><div class="slide-sec">02</div>
@@ -264,7 +266,7 @@ footer{padding:30px 0 50px;text-align:center;color:var(--mut);font-size:13px;bor
           <div class="bad"><b>Un chatbot</b><p>Solo responde. Te da texto y ahí se queda. Tú haces todo lo demás.</p></div>
           <div class="good"><b>Muse</b><p>Hace la tarea. Revisa, organiza, investiga y te entrega el resultado listo.</p></div>
         </div>
-        <div class="slide-img" style="margin-top:16px"><span class="chip">Él trabaja, tú descansas</span><img src="/muse/img/trabajando.webp?v=5" alt="Muse trabajando en la laptop"/></div>
+        <div class="slide-img" style="margin-top:16px"><span class="chip">Él trabaja, tú descansas</span><video autoplay loop muted playsinline preload="metadata" poster="/muse/img/trabajando.webp?v=5" src="/muse/img/jolly-trabajando.mp4?v=1" aria-label="Muse trabajando en la laptop"></video></div>
       <div class="band">Un chatbot responde. <b>Muse hace.</b></div></div>
       <div class="hslide">
         <div class="slide-brand">[ <b>MODO</b> ANALISTA ]</div><div class="slide-sec">04</div>
@@ -366,7 +368,7 @@ footer{padding:30px 0 50px;text-align:center;color:var(--mut);font-size:13px;bor
           <img src="/muse/qr.svg?v=5" alt="QR de la presentación de Muse"/>
           <p><b>Vuelve a escanear</b> si se te perdió la página: modo-analista.vercel.app/muse</p>
         </div>
-        <div class="slide-img"><span class="chip pink">Guárdala</span><img src="/muse/img/portada.webp?v=5" alt="MODO junto a Muse"/></div></div>
+        <div class="slide-img"><span class="chip pink">Guárdala</span><video autoplay loop muted playsinline preload="metadata" poster="/muse/img/portada.webp?v=5" src="/muse/img/jolly-esfera.mp4?v=1" aria-label="MODO junto a Muse, Jolly jugando con su esfera"></video></div></div>
       <div class="band">Ya sabes empezar. <b>Ahora practica.</b></div></div>
       <div class="hslide">
         <div class="slide-brand">[ <b>MODO</b> ANALISTA ]</div><div class="slide-sec">13</div>
@@ -555,6 +557,7 @@ Usa lenguaje sencillo, para principiantes, y pon las fuentes al final.</script>
     firstShow=false;
     i=next;
     slides.forEach(function(s,j){s.classList.toggle('on',j===i)});
+    slides.forEach(function(s,j){var v=s.querySelector('video');if(v){if(j===i){var pr=v.play();if(pr&&pr.catch){pr.catch(function(){})}}else{v.pause()}}});
     cnt.textContent=(i+1)+' / '+N;
     tb.forEach(function(b,j){b.classList.toggle('on',j===i)});
     var a=tb[i];th.scrollTo({left:a.offsetLeft-th.clientWidth/2+a.clientWidth/2,behavior:'smooth'});

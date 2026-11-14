@@ -173,6 +173,7 @@ footer{padding:30px 0 50px;text-align:center;color:var(--mut);font-size:13px;bor
 .slide-img img.modo-corner{position:absolute;right:12px;bottom:12px;width:64px;height:64px;aspect-ratio:1/1;border-radius:14px;object-fit:cover;object-position:50% 20%;border:1px solid rgba(255,255,255,.35);background:#0b100e;z-index:2}
 .hero-visual{width:clamp(280px,34vw,420px)}
 .hero-visual img.portada{width:100%;border-radius:22px;border:1px solid rgba(31,229,138,.55);box-shadow:0 24px 70px -18px rgba(31,229,138,.5);display:block}
+.hero-visual video.portada{width:100%;border-radius:22px;border:1px solid rgba(31,229,138,.55);box-shadow:0 24px 70px -18px rgba(31,229,138,.5);display:block}
 @media(max-width:700px){.stage{aspect-ratio:auto;height:auto;min-height:560px}.slide-grid{grid-template-columns:1fr;gap:14px;flex:none}.hslide{position:relative;inset:auto;justify-content:flex-start;overflow:visible}.slide-img{flex:none}.slide-img img,.slide-img video{height:auto;aspect-ratio:16/10}.dnav{display:none}.qr14{flex:none}.qr14-wrap{width:260px;height:260px}.qr14 img.modo-corner{width:48px;height:48px}}
 
 @keyframes hslideIn{from{opacity:0;transform:translateX(28px)}to{opacity:1;transform:translateX(0)}}
@@ -228,7 +229,7 @@ footer{padding:30px 0 50px;text-align:center;color:var(--mut);font-size:13px;bor
     </div>
     </div>
     <div class="hero-visual">
-      <img class="portada" src="/muse/img/portada.webp?v=5" alt="MODO, el cuervo negro, junto a Muse, el personaje rosa, saludando"/>
+      <video class="portada" autoplay loop muted playsinline preload="auto" poster="/muse/img/portada.webp?v=5" src="/muse/img/jolly-saludando.mp4?v=1" aria-label="MODO, el cuervo negro, junto a Muse, el personaje rosa, saludando"></video>
     </div>
   </header>
 
@@ -256,7 +257,7 @@ footer{padding:30px 0 50px;text-align:center;color:var(--mut);font-size:13px;bor
           <li>Trabaja aunque cierres la app.</li>
           <li>Te avisa qué hizo y qué sigue.</li>
         </ul></div>
-        <div class="slide-img"><span class="chip">Trabaja por ti</span><img src="/muse/img/trabajando.webp?v=5" alt="Muse trabajando en la laptop mientras una persona descansa"/><img class="modo-corner" src="/img/modo/pose13.png" alt="MODO"/></div></div>
+        <div class="slide-img"><span class="chip">Trabaja por ti</span><video autoplay loop muted playsinline preload="metadata" poster="/muse/img/trabajando.webp?v=5" src="/muse/img/jolly-trabajando.mp4?v=1" aria-label="Muse trabajando en la laptop mientras una persona descansa"></video><img class="modo-corner" src="/img/modo/pose13.png" alt="MODO"/></div></div>
       <div class="band">No solo responde. <b>Hace la tarea por ti.</b></div></div>
       <div class="hslide">
         <div class="slide-brand">[ <b>MODO</b> ANALISTA ]</div><div class="slide-sec">03</div>
@@ -277,7 +278,7 @@ footer{padding:30px 0 50px;text-align:center;color:var(--mut);font-size:13px;bor
           <div><span class="ico">🗓️</span><b>Tu agenda</b><p>Organiza tu semana y te prepara el plan, día por día.</p></div>
           <div><span class="ico">🔍</span><b>Investiga</b><p>Busca un tema y te arma un documento, no solo una respuesta.</p></div>
         </div>
-        <div class="slide-img" style="margin-top:16px"><span class="chip">Respuestas listas</span><img src="/muse/img/correo.webp?v=5" alt="Laptop con correos y respuestas listas, calendario y celular con chat"/></div>
+        <div class="slide-img" style="margin-top:16px"><span class="chip">Respuestas listas</span><video autoplay loop muted playsinline preload="metadata" poster="/muse/img/correo.webp?v=5" src="/muse/img/mini-correo.mp4?v=1" aria-label="Laptop con correos y respuestas listas, calendario y celular con chat"></video></div>
       <div class="band">Correo, agenda e investigación. <b>Listo para aprobar.</b></div></div>
       <div class="hslide">
         <div class="slide-brand">[ <b>MODO</b> ANALISTA ]</div><div class="slide-sec">05</div>
@@ -289,7 +290,7 @@ footer{padding:30px 0 50px;text-align:center;color:var(--mut);font-size:13px;bor
           <li><b>3 · Pide tu primera tarea:</b> escríbela como si le hablaras a una persona.</li>
         </ul>
         <div style="margin-top:16px;flex:none"><a class="cta-btn" href="https://muse.ai" target="_blank" rel="noopener">Abrir Muse.ai ↗</a></div>
-        <div class="slide-img" style="margin-top:16px"><span class="chip">muse.ai</span><img src="/muse/img/celular.webp?v=5" alt="Celular con el chat de Muse"/></div>
+        <div class="slide-img" style="margin-top:16px"><span class="chip">muse.ai</span><video autoplay loop muted playsinline preload="metadata" poster="/muse/img/celular.webp?v=5" src="/muse/img/mini-celular.mp4?v=1" aria-label="Celular con el chat de Muse"></video></div>
       <div class="band">3 pasos. <b>Sin complicarte.</b></div></div>
       <div class="hslide">
         <div class="slide-brand">[ <b>MODO</b> ANALISTA ]</div><div class="slide-sec">06</div>
@@ -301,7 +302,7 @@ footer{padding:30px 0 50px;text-align:center;color:var(--mut);font-size:13px;bor
           <li>WhatsApp: también puedes hablarle desde ahí.</li>
           <li>En Windows no hay app: usa la web, funciona igual.</li>
         </ul>
-        <div class="slide-img" style="margin-top:16px"><span class="chip">En tu celular</span><img src="/muse/img/celular.webp?v=5" alt="Manos con celular chateando con Muse, laptop al fondo"/></div>
+        <div class="slide-img" style="margin-top:16px"><span class="chip">En tu celular</span><video autoplay loop muted playsinline preload="metadata" poster="/muse/img/celular.webp?v=5" src="/muse/img/mini-celular.mp4?v=1" aria-label="Manos con celular chateando con Muse, laptop al fondo"></video></div>
       <div class="band">Web, celular y WhatsApp. <b>Donde estés.</b></div></div>
       <div class="hslide">
         <div class="slide-brand">[ <b>MODO</b> ANALISTA ]</div><div class="slide-sec">07</div>
@@ -312,7 +313,7 @@ footer{padding:30px 0 50px;text-align:center;color:var(--mut);font-size:13px;bor
           <li><b>Bien:</b> “Revisa mi correo de hoy y déjame 3 respuestas listas para aprobar”.</li>
           <li>Dile el resultado que quieres, no solo el tema.</li>
         </ul>
-        <div class="slide-img" style="margin-top:16px"><span class="chip">Pídele bien</span><img src="/muse/img/s7-pedir.webp" alt="Manos tecleando un mensaje detallado en la laptop para pedirle bien a Muse"/><img class="modo-corner" src="/img/modo/pose14.png" alt="MODO"/></div>
+        <div class="slide-img" style="margin-top:16px"><span class="chip">Pídele bien</span><video autoplay loop muted playsinline preload="metadata" poster="/muse/img/s7-pedir.webp" src="/muse/img/mini-pedir.mp4?v=1" aria-label="Manos tecleando un mensaje detallado en la laptop para pedirle bien a Muse"></video><img class="modo-corner" src="/img/modo/pose14.png" alt="MODO"/></div>
       <div class="band">Qué + para qué + cómo + cuándo.</div></div>
       <div class="hslide">
         <div class="slide-brand">[ <b>MODO</b> ANALISTA ]</div><div class="slide-sec">08</div>
@@ -323,7 +324,7 @@ footer{padding:30px 0 50px;text-align:center;color:var(--mut);font-size:13px;bor
           <div><span class="ico">📄</span><b>Un resumen</b><p>“Resume este correo en 3 puntos”.</p></div>
           <div><span class="ico">🗓️</span><b>Un plan</b><p>“Organiza mi mañana en 3 tareas”.</p></div>
         </div>
-        <div class="slide-img" style="margin-top:16px"><span class="chip">Empieza chico</span><img src="/muse/img/s8-tarea.webp" alt="Celular con lista de pendientes y calendario, libreta y café: tu primera tarea con Muse"/><img class="modo-corner" src="/img/modo/pose23.png" alt="MODO"/></div>
+        <div class="slide-img" style="margin-top:16px"><span class="chip">Empieza chico</span><video autoplay loop muted playsinline preload="metadata" poster="/muse/img/s8-tarea.webp" src="/muse/img/mini-tarea.mp4?v=1" aria-label="Celular con lista de pendientes y calendario, libreta y café: tu primera tarea con Muse"></video><img class="modo-corner" src="/img/modo/pose23.png" alt="MODO"/></div>
       <div class="band">Empieza chico. <b>Empieza seguro.</b></div></div>
       <div class="hslide">
         <div class="slide-brand">[ <b>MODO</b> ANALISTA ]</div><div class="slide-sec">09</div>
@@ -345,7 +346,7 @@ footer{padding:30px 0 50px;text-align:center;color:var(--mut);font-size:13px;bor
           <li>Revisa lo que hizo antes de enviarlo.</li>
           <li>Si algo no te gusta, dile: “hazlo más corto” o “cámbialo así”.</li>
         </ul>
-        <div class="slide-img" style="margin-top:16px"><span class="chip">Tú apruebas</span><img src="/muse/img/s10-aprobar.webp" alt="Mano con el celular mostrando el diálogo de aprobación antes de enviar"/><img class="modo-corner" src="/img/modo/pose13.png" alt="MODO"/></div>
+        <div class="slide-img" style="margin-top:16px"><span class="chip">Tú apruebas</span><video autoplay loop muted playsinline preload="metadata" poster="/muse/img/s10-aprobar.webp" src="/muse/img/mini-aprobar.mp4?v=1" aria-label="Mano con el celular mostrando el diálogo de aprobación antes de enviar"></video><img class="modo-corner" src="/img/modo/pose13.png" alt="MODO"/></div>
       <div class="band">Nada sensible sin <b>tu aprobación.</b></div></div>
       <div class="hslide">
         <div class="slide-brand">[ <b>MODO</b> ANALISTA ]</div><div class="slide-sec">11</div>
